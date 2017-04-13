@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<title>湖南城市学院校友会信息管理系统</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta name="renderer" content="webkit|ie-comp|ie-stand">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+		<meta http-equiv="Cache-Control" content="no-siteapp" />
+		<link rel="stylesheet" href="assets/css/bootstrap.min.css"  />
+		<link rel="stylesheet" href="css/style.css" />
+		<link rel="stylesheet" href="css/public.css">
+		<link rel="stylesheet" href="assets/css/codemirror.css" >
+		<link rel="stylesheet" href="assets/css/ace.min.css" />
+		<link rel="stylesheet" href="assets/css/font-awesome.min.css" />
+		<link rel="stylesheet" href="font/css/font-awesome.min.css" />
+		<link rel="stylesheet" href="Widget/zTree/css/zTreeStyle/zTreeStyle.css" >
+		<!--[if IE 7]>
+		  <link rel="stylesheet" href="assets/css/font-awesome-ie7.min.css" />
+		<![endif]-->
+		<!--[if lte IE 8]>
+		  <link rel="stylesheet" href="assets/css/ace-ie.min.css" />
+		<![endif]-->
+		<script type="text/javascript" src="js/jquery-1.9.1.min.js"></script>
+		<script type="text/javascript" src="js/close_alert.js"></script>
+		<script type="text/javascript" src="js/lrtk.js" ></script>
+		<script type="text/javascript" src="js/custom.js" ></script>
+		<script type="text/javascript" src="assets/js/bootstrap.min.js"></script>
+		<script type="text/javascript" src="assets/js/typeahead-bs2.min.js"></script>
+		<script type="text/javascript" src="assets/js/jquery.dataTables.min.js"></script>
+		<script type="text/javascript" src="assets/js/jquery.dataTables.bootstrap.js"></script>
+		<script type="text/javascript" src="assets/layer/layer.js"></script>
+		<script type="text/javascript" src="assets/laydate/laydate.js"></script>
+		<script type="text/javascript" src="assets/js/jquery.easy-pie-chart.min.js"></script>
+		<!--表单验证 -->
+		<script type="text/javascript" src="Widget/Validform/5.3.2/Validform.min.js"></script>
+		<!--动态传值 -->
+		<script type="text/javascript" src="js/vue.js"></script>
+		<!--图片上传 -->
+		<script type="text/javascript" src="scripts/swfobject.js"></script>
+		<script type="text/javascript" src="scripts/fullAvatarEditor.js"></script>
+		<!--文件树 -->
+		<script type="text/javascript" src="Widget/zTree/js/jquery.ztree.all-3.5.min.js"></script>
+		<!--富文本 -->
+		<script type="text/javascript" charset="utf-8" src="js/ueditor.config.js"></script>
+		<script type="text/javascript" charset="utf-8" src="js/editor_api.js">
+		</script>
+		<!--建议手动加在语言，避免在ie下有时因为加载语言失败导致编辑器加载失败-->
+		<!--这里加载的语言文件会覆盖你在配置项目里添加的语言类型，比如你在配置项目里配置的是英文，这里加载的中文，那最后就是中文-->
+		<script type="text/javascript" charset="utf-8" src="js/zh-cn.js"></script>
+	</head>
+	<style>
+		.con_jjhjj {
+			width: 96%;
+			margin: 10px auto;
+			min-width: 850px;
+			min-height: 800px;
+			border: 1px solid #ccc;
+			background: #fff;
+			box-shadow: 0px 5px 10px #AFAEAE;
+		}
+		
+		.con_jjhjj .jjhjj_con {
+			width: 98%;
+			min-height: 770px;
+			margin: 1% 1% 1% 1%;
+			border: 1px solid #E3E3E3;
+			background: #fff;
+			padding: 10px 20px;
+		}
+	</style>
+
+	<body>
+		<div class="con_jjhjj">
+			<div class="clearfix" style="margin: 1% 1%;">
+				<span class="l_f">
+        <a href="javascript:void(0);" id="ads_add" class="btn btn-warning"><i class="fa fa-plus"></i> 修改文章</a>
+            </span>
+			</div>
+			<div class="alert alert-block alert-success">
+				<button type="button" class="close" data-dismiss="alert"><i class="icon-remove"></i></button>
+				<i class="icon-ok green"></i><strong>【系统管理员】</strong>保存成功
+			</div>
+			<div class="jjhjj_con">
+				<tbody>
+					<table class="wb_window" width="100%">
+						<tbody>
+							<tr>
+								<td align="center">
+									<h1>湖南城市学院教育发展基金会章程</h1></td>
+							</tr>
+							<tr>
+								<td class="contentstyle128747">
+									<p class="p0" style="margin-bottom: 0pt;text-align: center;margin-top: 0pt"><span style="font-size: 12pt"><span style="font-family: '黑体';color: rgb(0,0,0);mso-spacerun: 'yes'">第一章</span><span style="font-family: '宋体';color: rgb(0,0,0);mso-spacerun: 'yes'">&nbsp;&nbsp;&nbsp;</span><span style="font-family: '黑体';color: rgb(0,0,0);mso-spacerun: 'yes'">总</span><span style="font-family: '宋体';color: rgb(0,0,0);mso-spacerun: 'yes'">&nbsp;&nbsp;</span><span style="font-family: '黑体';color: rgb(0,0,0);mso-spacerun: 'yes'">则</span></span>
+									</p>
+									<p class="p0" style="margin-bottom: 0pt;text-align: left;margin-top: 0pt;text-indent: 21pt"><span style="font-size: 12pt"><span style="font-family: '宋体';color: rgb(0,0,0);mso-spacerun: 'yes'">第一条</span><span style="font-family: '宋体';color: rgb(0,0,0);mso-spacerun: 'yes'">&nbsp;&nbsp;</span><span style="font-family: '宋体';color: rgb(0,0,0);mso-spacerun: 'yes'">本基金会的名称是湖南城市学院教育发展基金会。</span></span>
+									</p>
+									<p class="p0" style="margin-bottom: 0pt;text-align: left;margin-top: 0pt;text-indent: 21pt"><span style="font-size: 12pt"><span style="font-family: '宋体';color: rgb(0,0,0);mso-spacerun: 'yes'">第二条</span><span style="font-family: '宋体';color: rgb(0,0,0);mso-spacerun: 'yes'">&nbsp;&nbsp;</span><span style="font-family: '宋体';color: rgb(0,0,0);mso-spacerun: 'yes'">本基金会属于非公募基金会。</span></span>
+									</p>
+									<p class="p0" style="margin-bottom: 0pt;text-align: left;margin-top: 0pt;text-indent: 21pt"><span style="font-size: 12pt"><span style="font-family: '宋体';color: rgb(0,0,0);mso-spacerun: 'yes'">第三条</span><span style="font-family: '宋体';color: rgb(0,0,0);mso-spacerun: 'yes'">&nbsp;&nbsp;</span><span style="font-family: '宋体';color: rgb(0,0,0);mso-spacerun: 'yes'">本基金会的宗旨：在国家法律法规和政策范围内，广泛利用各种渠道吸纳筹措资金，全面支持和推动湖南城市学院的建设和发展。</span></span>
+									</p>
+									<p class="p0" style="margin-bottom: 0pt;text-align: left;margin-top: 0pt;text-indent: 21pt"><span style="font-size: 12pt"><span style="font-family: '宋体';color: rgb(0,0,0);mso-spacerun: 'yes'">第四条</span><span style="font-family: '宋体';color: rgb(0,0,0);mso-spacerun: 'yes'">&nbsp;&nbsp;</span><span style="font-family: '宋体';color: rgb(0,0,0);mso-spacerun: 'yes'">本基金会的原始基金数额为人民币</span><span style="font-family: '宋体';color: rgb(0,0,0);mso-spacerun: 'yes'">200</span><span style="font-family: '宋体';color: rgb(0,0,0);mso-spacerun: 'yes'">万元，来源于湖南城市学院已接受的社会捐赠。</span></span>
+									</p>
+									<p class="p0" style="margin-bottom: 0pt;text-align: left;margin-top: 0pt;text-indent: 21pt"><span style="font-size: 12pt"><span style="font-family: '宋体';color: rgb(0,0,0);mso-spacerun: 'yes'">第五条</span><span style="font-family: '宋体';color: rgb(0,0,0);mso-spacerun: 'yes'">&nbsp;&nbsp;</span><span style="font-family: '宋体';color: rgb(0,0,0);mso-spacerun: 'yes'">本基金会的登记管理机关是湖南省民政厅，业务主管单位是湖南省教育厅。</span></span>
+									</p>
+									<p class="p0" style="margin-bottom: 0pt;text-align: left;margin-top: 0pt;text-indent: 21pt"><span style="font-size: 12pt"><span style="font-family: '宋体';color: rgb(0,0,0);mso-spacerun: 'yes'">第六条</span><span style="font-family: '宋体';color: rgb(0,0,0);mso-spacerun: 'yes'">&nbsp;&nbsp;</span><span style="font-family: '宋体';color: rgb(0,0,0);mso-spacerun: 'yes'">本基金会的住所：湖南城市学院实验楼</span><span style="font-family: '宋体';color: rgb(0,0,0);mso-spacerun: 'yes'">B</span><span style="font-family: '宋体';color: rgb(0,0,0);mso-spacerun: 'yes'">栋北</span><span style="font-family: '宋体';color: rgb(0,0,0);mso-spacerun: 'yes'">320</span><span style="font-family: '宋体';color: rgb(0,0,0);mso-spacerun: 'yes'">房。</span></span>
+									</p>
+									<p class="p0" style="margin-bottom: 0pt;text-align: left;margin-top: 0pt;text-indent: 21pt"><span style="font-size: 12pt">&nbsp;</span></p>
+									<p class="p0" style="margin-bottom: 0pt;text-align: center;margin-top: 0pt"><span style="font-size: 12pt"><span style="font-family: '黑体';color: rgb(0,0,0);mso-spacerun: 'yes'">第二章</span><span style="font-family: '宋体';color: rgb(0,0,0);mso-spacerun: 'yes'">&nbsp;&nbsp;&nbsp;</span><span style="font-family: '黑体';color: rgb(0,0,0);mso-spacerun: 'yes'">业务范围</span></span>
+									</p>
+									<p class="p0" style="margin-bottom: 0pt;text-align: left;margin-top: 0pt;text-indent: 21pt"><span style="font-size: 12pt"><span style="font-family: '黑体';color: rgb(0,0,0);mso-spacerun: 'yes'">第七条</span><span style="font-family: '宋体';color: rgb(0,0,0);mso-spacerun: 'yes'">&nbsp;&nbsp;</span><span style="font-family: '宋体';color: rgb(0,0,0);mso-spacerun: 'yes'">本基金会公益活动的业务范围。</span></span>
+									</p>
+									<p class="p0" style="margin-bottom: 0pt;text-align: left;margin-top: 0pt;text-indent: 21pt"><span style="font-size: 12pt"><span style="font-family: '宋体';color: rgb(0,0,0);mso-spacerun: 'yes'">（一）筹集基金：接受社会各界，包括机关、团体、企事业单位和个人的捐赠（含现钞和物资等）。</span></span>
+									</p>
+									<p class="p0" style="margin-bottom: 0pt;text-align: left;margin-top: 0pt;text-indent: 21pt"><span style="font-size: 12pt"><span style="font-family: '宋体';color: rgb(0,0,0);mso-spacerun: 'yes'">（二）管理基金：通过银行存款、购买并持有债券、拍卖物资等方式，科学、规范地运作基金，使基金实现保值增值和连续积累，滚动发展。</span></span>
+									</p>
+									<p class="p0" style="margin-bottom: 0pt;text-align: left;margin-top: 0pt;text-indent: 21pt"><span style="font-size: 12pt"><span style="font-family: '宋体';color: rgb(0,0,0);mso-spacerun: 'yes'">（三）使用基金：支持湖南城市学院的建设和发展项目；奖励为湖南城市学院建设与发展做出突出贡献的单位和个人；资助在校贫困学生。</span></span>
+									</p>
+									<p class="p0" style="margin-bottom: 0pt;text-align: center;margin-top: 0pt"><span style="font-size: 12pt"><span style="font-family: '黑体';color: rgb(0,0,0);mso-spacerun: 'yes'">第三章</span><span style="font-family: '宋体';color: rgb(0,0,0);mso-spacerun: 'yes'">&nbsp;&nbsp;&nbsp;</span><span style="font-family: '黑体';color: rgb(0,0,0);mso-spacerun: 'yes'">组织机构、负责人</span></span>
+									</p>
+									<p class="p0" style="margin-bottom: 0pt;text-align: left;margin-top: 0pt;text-indent: 21pt"><span style="font-size: 12pt"><span style="font-family: '宋体';color: rgb(0,0,0);mso-spacerun: 'yes'">第八条</span><span style="font-family: '宋体';color: rgb(0,0,0);mso-spacerun: 'yes'">&nbsp;&nbsp;</span><span style="font-family: '宋体';color: rgb(0,0,0);mso-spacerun: 'yes'">本基金会由</span><span style="font-family: '宋体';color: rgb(0,0,0);mso-spacerun: 'yes'">7</span><span style="font-family: '宋体';color: rgb(0,0,0);mso-spacerun: 'yes'">名理事组成理事会。本基金会理事每届任期为</span><span style="font-family: '宋体';color: rgb(0,0,0);mso-spacerun: 'yes'">5</span><span style="font-family: '宋体';color: rgb(0,0,0);mso-spacerun: 'yes'">年，任期届满，连选可以连任。</span></span>
+									</p>
+									<p class="p0" style="margin-bottom: 0pt;text-align: left;margin-top: 0pt;text-indent: 21pt"><span style="font-size: 12pt"><span style="font-family: '宋体';color: rgb(0,0,0);mso-spacerun: 'yes'">第九条</span><span style="font-family: '宋体';color: rgb(0,0,0);mso-spacerun: 'yes'">&nbsp;&nbsp;</span><span style="font-family: '宋体';color: rgb(0,0,0);mso-spacerun: 'yes'">理事的资格</span></span>
+									</p>
+									<p class="p0" style="margin-bottom: 0pt;text-align: left;margin-top: 0pt;text-indent: 21pt"><span style="font-size: 12pt"><span style="font-family: '宋体';color: rgb(0,0,0);mso-spacerun: 'yes'">（一）拥护本基金会的章程；</span></span>
+									</p>
+									<p class="p0" style="margin-bottom: 0pt;text-align: left;margin-top: 0pt;text-indent: 21pt"><span style="font-size: 12pt"><span style="font-family: '宋体';color: rgb(0,0,0);mso-spacerun: 'yes'">（二）有加入本基金会的意愿；</span></span>
+									</p>
+									<p class="p0" style="margin-bottom: 0pt;text-align: left;margin-top: 0pt;text-indent: 21pt"><span style="font-size: 12pt"><span style="font-family: '宋体';color: rgb(0,0,0);mso-spacerun: 'yes'">（三）关心基金会的发展，热心基金会的工作；</span></span>
+									</p>
+									<p class="p0" style="margin-bottom: 0pt;text-align: left;margin-top: 0pt;text-indent: 21pt"><span style="font-size: 12pt"><span style="font-family: '宋体';color: rgb(0,0,0);mso-spacerun: 'yes'">（四）对基金会有实质性的支持或在教育科技界享有较高威望。</span></span>
+									</p>
+									<p class="p0" style="margin-bottom: 0pt;text-align: left;margin-top: 0pt;text-indent: 21pt"><span style="font-size: 12pt"><span style="font-family: '宋体';color: rgb(0,0,0);mso-spacerun: 'yes'">第十条</span><span style="font-family: '宋体';color: rgb(0,0,0);mso-spacerun: 'yes'">&nbsp;&nbsp;</span><span style="font-family: '宋体';color: rgb(0,0,0);mso-spacerun: 'yes'">理事的产生和罢免</span></span>
+									</p>
+									<p class="p0" style="margin-bottom: 0pt;text-align: left;margin-top: 0pt;text-indent: 21pt"><span style="font-size: 12pt"><span style="font-family: '宋体';color: rgb(0,0,0);mso-spacerun: 'yes'">（一）第一届理事由业务主管单位、主要捐赠人、发起人分别提名并共同协商确定。</span></span>
+									</p>
+									<p class="p0" style="margin-bottom: 0pt;text-align: left;margin-top: 0pt;text-indent: 21pt"><span style="font-size: 12pt"><span style="font-family: '宋体';color: rgb(0,0,0);mso-spacerun: 'yes'">（二）理事会换届改选时，由业务主管单位、理事会、主要捐赠人共同提名候选人并组成换届领导小组，组织全部候选人共同选举产生新一届理事。</span></span>
+									</p>
+									<p class="p0" style="margin-bottom: 0pt;text-align: left;margin-top: 0pt;text-indent: 21pt"><span style="font-size: 12pt"><span style="font-family: '宋体';color: rgb(0,0,0);mso-spacerun: 'yes'">（三）罢免，增补理事应当经理事会表决通过，报业务主管单位审查同意。</span></span>
+									</p>
+									<p class="p0" style="margin-bottom: 0pt;text-align: left;margin-top: 0pt;text-indent: 21pt"><span style="font-size: 12pt"><span style="font-family: '宋体';color: rgb(0,0,0);mso-spacerun: 'yes'">（四）理事的选举和罢免结果报登记管理机关备案。</span></span>
+									</p>
+									<p class="p0" style="margin-bottom: 0pt;text-align: left;margin-top: 0pt;text-indent: 21pt"><span style="font-size: 12pt"><span style="font-family: '宋体';color: rgb(0,0,0);mso-spacerun: 'yes'">第十一条</span><span style="font-family: '宋体';color: rgb(0,0,0);mso-spacerun: 'yes'">&nbsp;&nbsp;</span><span style="font-family: '宋体';color: rgb(0,0,0);mso-spacerun: 'yes'">理事的权利和义务</span></span>
+									</p>
+									<p class="p0" style="margin-bottom: 0pt;text-align: left;margin-top: 0pt;text-indent: 21pt"><span style="font-size: 12pt"><span style="font-family: '宋体';color: rgb(0,0,0);mso-spacerun: 'yes'">（一）享有本基金会的选举权、被选举权和表决权；</span></span>
+									</p>
+									<p class="p0" style="margin-bottom: 0pt;text-align: left;margin-top: 0pt;text-indent: 21pt"><span style="font-size: 12pt"><span style="font-family: '宋体';color: rgb(0,0,0);mso-spacerun: 'yes'">（二）参加本基金会的活动；</span></span>
+									</p>
+									<p class="p0" style="margin-bottom: 0pt;text-align: left;margin-top: 0pt;text-indent: 21pt"><span style="font-size: 12pt"><span style="font-family: '宋体';color: rgb(0,0,0);mso-spacerun: 'yes'">（三）对本基金会工作的批评建议权和监督权；</span></span>
+									</p>
+									<p class="p0" style="margin-bottom: 0pt;text-align: left;margin-top: 0pt;text-indent: 21pt"><span style="font-size: 12pt"><span style="font-family: '宋体';color: rgb(0,0,0);mso-spacerun: 'yes'">（四）入会自愿，退会自由；</span></span>
+									</p>
+									<p class="p0" style="margin-bottom: 0pt;text-align: left;margin-top: 0pt;text-indent: 21pt"><span style="font-size: 12pt"><span style="font-family: '宋体';color: rgb(0,0,0);mso-spacerun: 'yes'">（五）执行基金会的决议，维护基金会的合法权益，完成基金会交办的工作。</span></span>
+									</p>
+									<p class="p0" style="margin-bottom: 0pt;text-align: left;margin-top: 0pt;text-indent: 21pt"><span style="font-size: 12pt"><span style="font-family: '宋体';color: rgb(0,0,0);mso-spacerun: 'yes'">（六）积极为基金会筹集资金。</span></span>
+									</p>
+									<p class="p0" style="margin-bottom: 0pt;text-align: left;margin-top: 0pt;text-indent: 21pt"><span style="font-size: 12pt"><span style="font-family: '宋体';color: rgb(0,0,0);mso-spacerun: 'yes'">第十二条</span><span style="font-family: '宋体';color: rgb(0,0,0);mso-spacerun: 'yes'">&nbsp;&nbsp;</span><span style="font-family: '宋体';color: rgb(0,0,0);mso-spacerun: 'yes'">理事会是基金会的决策机构，行使下列职权：</span></span>
+									</p>
+									<p class="p0" style="margin-bottom: 0pt;text-align: left;margin-top: 0pt;text-indent: 21pt"><span style="font-size: 12pt"><span style="font-family: '宋体';color: rgb(0,0,0);mso-spacerun: 'yes'">（一）制定、修改章程；</span></span>
+									</p>
+									<p class="p0" style="margin-bottom: 0pt;text-align: left;margin-top: 0pt;text-indent: 21pt"><span style="font-size: 12pt"><span style="font-family: '宋体';color: rgb(0,0,0);mso-spacerun: 'yes'">（二）选举、罢免理事长、副理事长、秘书长；</span></span>
+									</p>
+									<p class="p0" style="margin-bottom: 0pt;text-align: left;margin-top: 0pt;text-indent: 21pt"><span style="font-size: 12pt"><span style="font-family: '宋体';color: rgb(0,0,0);mso-spacerun: 'yes'">（三）决定重大业务活动计划，包括资金的募集、管理和使用计划；</span></span>
+									</p>
+									<p class="p0" style="margin-bottom: 0pt;text-align: left;margin-top: 0pt;text-indent: 21pt"><span style="font-size: 12pt"><span style="font-family: '宋体';color: rgb(0,0,0);mso-spacerun: 'yes'">（四）年度收支预算及决算审定；</span></span>
+									</p>
+									<p class="p0" style="margin-bottom: 0pt;text-align: left;margin-top: 0pt;text-indent: 21pt"><span style="font-size: 12pt"><span style="font-family: '宋体';color: rgb(0,0,0);mso-spacerun: 'yes'">（五）制定内部管理制度；</span></span>
+									</p>
+									<p class="p0" style="margin-bottom: 0pt;text-align: left;margin-top: 0pt;text-indent: 21pt"><span style="font-size: 12pt"><span style="font-family: '宋体';color: rgb(0,0,0);mso-spacerun: 'yes'">（六）决定设立办事机构、分支机构、代表机构；</span></span>
+									</p>
+									<p class="p0" style="margin-bottom: 0pt;text-align: left;margin-top: 0pt;text-indent: 21pt"><span style="font-size: 12pt"><span style="font-family: '宋体';color: rgb(0,0,0);mso-spacerun: 'yes'">（七）决定由秘书长提名的副秘书长和各机构主要负责人的聘任；</span></span>
+									</p>
+									<p class="p0" style="margin-bottom: 0pt;text-align: left;margin-top: 0pt;text-indent: 21pt"><span style="font-size: 12pt"><span style="font-family: '宋体';color: rgb(0,0,0);mso-spacerun: 'yes'">（八）听取、审议秘书长的工作报告，检查秘书长的工作；</span></span>
+									</p>
+									<p class="p0" style="margin-bottom: 0pt;text-align: left;margin-top: 0pt;text-indent: 21pt"><span style="font-size: 12pt"><span style="font-family: '宋体';color: rgb(0,0,0);mso-spacerun: 'yes'">（九）决定基金会的分立、合并或终止；</span></span>
+									</p>
+									<p class="p0" style="margin-bottom: 0pt;text-align: left;margin-top: 0pt;text-indent: 21pt"><span style="font-size: 12pt"><span style="font-family: '宋体';color: rgb(0,0,0);mso-spacerun: 'yes'">（十）决定其他重大事项。</span></span>
+									</p>
+									<p class="p0" style="margin-bottom: 0pt;text-align: left;margin-top: 0pt;text-indent: 21pt"><span style="font-size: 12pt"><span style="font-family: '宋体';color: rgb(0,0,0);mso-spacerun: 'yes'">第十三条</span><span style="font-family: '宋体';color: rgb(0,0,0);mso-spacerun: 'yes'">&nbsp;&nbsp;</span><span style="font-family: '宋体';color: rgb(0,0,0);mso-spacerun: 'yes'">理事会每年召开</span><span style="font-family: '宋体';color: rgb(0,0,0);mso-spacerun: 'yes'">2</span><span style="font-family: '宋体';color: rgb(0,0,0);mso-spacerun: 'yes'">次会议。理事会会议由理事长负责召集和主持。</span></span>
+									</p>
+									<p class="p0" style="margin-bottom: 0pt;text-align: left;margin-top: 0pt;text-indent: 21pt"><span style="font-size: 12pt"><span style="font-family: '宋体';color: rgb(0,0,0);mso-spacerun: 'yes'">有</span><span style="font-family: '宋体';color: rgb(0,0,0);mso-spacerun: 'yes'">1/3</span><span style="font-family: '宋体';color: rgb(0,0,0);mso-spacerun: 'yes'">理事提议，必须召开理事会会议。如理事长不能召集，提议理事可推选召集人。</span></span>
+									</p>
+									<p class="p0" style="margin-bottom: 0pt;text-align: left;margin-top: 0pt;text-indent: 21pt"><span style="font-size: 12pt"><span style="font-family: '宋体';color: rgb(0,0,0);mso-spacerun: 'yes'">召开理事会会议，理事长或召集人需提前</span><span style="font-family: '宋体';color: rgb(0,0,0);mso-spacerun: 'yes'">5</span><span style="font-family: '宋体';color: rgb(0,0,0);mso-spacerun: 'yes'">日通知全体理事、监事。</span></span>
+									</p>
+									<p class="p0" style="margin-bottom: 0pt;text-align: left;margin-top: 0pt;text-indent: 21pt"><span style="font-size: 12pt"><span style="font-family: '宋体';color: rgb(0,0,0);mso-spacerun: 'yes'">第十四条</span><span style="font-family: '宋体';color: rgb(0,0,0);mso-spacerun: 'yes'">&nbsp;&nbsp;</span><span style="font-family: '宋体';color: rgb(0,0,0);mso-spacerun: 'yes'">理事会会议须有</span><span style="font-family: '宋体';color: rgb(0,0,0);mso-spacerun: 'yes'">2/3</span><span style="font-family: '宋体';color: rgb(0,0,0);mso-spacerun: 'yes'">以上理事出席方能召开；理事会决议须经出席理事表决，</span><span style="font-family: '宋体';color: rgb(0,0,0);mso-spacerun: 'yes'">2/3</span><span style="font-family: '宋体';color: rgb(0,0,0);mso-spacerun: 'yes'">以上通过方为有效。</span></span>
+									</p>
+									<p class="p0" style="margin-bottom: 0pt;text-align: left;margin-top: 0pt;text-indent: 21pt"><span style="font-size: 12pt"><span style="font-family: '宋体';color: rgb(0,0,0);mso-spacerun: 'yes'">（一）章程的修改；</span></span>
+									</p>
+									<p class="p0" style="margin-bottom: 0pt;text-align: left;margin-top: 0pt;text-indent: 21pt"><span style="font-size: 12pt"><span style="font-family: '宋体';color: rgb(0,0,0);mso-spacerun: 'yes'">（二）选举或者罢免理事长、副理事长、秘书长；</span></span>
+									</p>
+									<p class="p0" style="margin-bottom: 0pt;text-align: left;margin-top: 0pt;text-indent: 21pt"><span style="font-size: 12pt"><span style="font-family: '宋体';color: rgb(0,0,0);mso-spacerun: 'yes'">（三）章程规定的重大募捐、投资活动；</span></span>
+									</p>
+									<p class="p0" style="margin-bottom: 0pt;text-align: left;margin-top: 0pt;text-indent: 21pt"><span style="font-size: 12pt"><span style="font-family: '宋体';color: rgb(0,0,0);mso-spacerun: 'yes'">（四）基金会的分立、合并。</span></span>
+									</p>
+									<p class="p0" style="margin-bottom: 0pt;text-align: left;margin-top: 0pt;text-indent: 21pt"><span style="font-size: 12pt"><span style="font-family: '宋体';color: rgb(0,0,0);mso-spacerun: 'yes'">第十五条</span><span style="font-family: '宋体';color: rgb(0,0,0);mso-spacerun: 'yes'">&nbsp;&nbsp;</span><span style="font-family: '宋体';color: rgb(0,0,0);mso-spacerun: 'yes'">理事会会议应当制作会议记录。形成决议的，应当当场制作会议纪要，并由出席理事审阅、签名。理事会决议违反法律、法规或章程规定，致使基金会遭受损失的，参与决议的理事应当承担责任。但经证明在表决时反对并记载于会议记录的，该理事可免除责任。</span></span>
+									</p>
+									<p class="p0" style="margin-bottom: 0pt;text-align: left;margin-top: 0pt;text-indent: 21pt"><span style="font-size: 12pt"><span style="font-family: '宋体';color: rgb(0,0,0);mso-spacerun: 'yes'">第十六条</span><span style="font-family: '宋体';color: rgb(0,0,0);mso-spacerun: 'yes'">&nbsp;&nbsp;</span><span style="font-family: '宋体';color: rgb(0,0,0);mso-spacerun: 'yes'">本基金会设监事</span><span style="font-family: '宋体';color: rgb(0,0,0);mso-spacerun: 'yes'">1</span><span style="font-family: '宋体';color: rgb(0,0,0);mso-spacerun: 'yes'">名。监事任期与理事任期相同，期满可以连任。</span></span>
+									</p>
+									<p class="p0" style="margin-bottom: 0pt;text-align: left;margin-top: 0pt;text-indent: 21pt"><span style="font-size: 12pt"><span style="font-family: '宋体';color: rgb(0,0,0);mso-spacerun: 'yes'">第十七条</span><span style="font-family: '宋体';color: rgb(0,0,0);mso-spacerun: 'yes'">&nbsp;&nbsp;</span><span style="font-family: '宋体';color: rgb(0,0,0);mso-spacerun: 'yes'">理事、理事的近亲属和基金会财会人员不得任监事。</span></span>
+									</p>
+									<p class="p0" style="margin-bottom: 0pt;text-align: left;margin-top: 0pt;text-indent: 21pt"><span style="font-size: 12pt"><span style="font-family: '宋体';color: rgb(0,0,0);mso-spacerun: 'yes'">第十八条</span><span style="font-family: '宋体';color: rgb(0,0,0);mso-spacerun: 'yes'">&nbsp;&nbsp;</span><span style="font-family: '宋体';color: rgb(0,0,0);mso-spacerun: 'yes'">监事的产生和罢免。</span></span>
+									</p>
+									<p class="p0" style="margin-bottom: 0pt;text-align: left;margin-top: 0pt;text-indent: 21pt"><span style="font-size: 12pt"><span style="font-family: '宋体';color: rgb(0,0,0);mso-spacerun: 'yes'">（一）监事由主要捐赠人、业务主管单位选派；</span></span>
+									</p>
+									<p class="p0" style="margin-bottom: 0pt;text-align: left;margin-top: 0pt;text-indent: 21pt"><span style="font-size: 12pt"><span style="font-family: '宋体';color: rgb(0,0,0);mso-spacerun: 'yes'">（二）登记管理机关根据工作需要选派；</span></span>
+									</p>
+									<p class="p0" style="margin-bottom: 0pt;text-align: left;margin-top: 0pt;text-indent: 21pt"><span style="font-size: 12pt"><span style="font-family: '宋体';color: rgb(0,0,0);mso-spacerun: 'yes'">（三）监事的变更依照其产生程序。</span></span>
+									</p>
+									<p class="p0" style="margin-bottom: 0pt;text-align: left;margin-top: 0pt;text-indent: 21pt"><span style="font-size: 12pt"><span style="font-family: '宋体';color: rgb(0,0,0);mso-spacerun: 'yes'">第十九条</span><span style="font-family: '宋体';color: rgb(0,0,0);mso-spacerun: 'yes'">&nbsp;&nbsp;</span><span style="font-family: '宋体';color: rgb(0,0,0);mso-spacerun: 'yes'">监事的权利和义务。</span></span>
+									</p>
+									<p class="p0" style="margin-bottom: 0pt;text-align: left;margin-top: 0pt;text-indent: 21pt"><span style="font-size: 12pt"><span style="font-family: '宋体';color: rgb(0,0,0);mso-spacerun: 'yes'">监事依照章程规定的程序检查基金会财务和会计资料，监督理事会遵守法律和章程的情况。监事列席理事会会议，有权向理事会提出质询和建议，并应当向登记管理机关、业务主管单位以及税务、会计主管部门反映情况。监事应当遵守有关法律法规和基金会章程，忠实履行职责。</span></span>
+									</p>
+									<p class="p0" style="margin-bottom: 0pt;text-align: left;margin-top: 0pt;text-indent: 21pt"><span style="font-size: 12pt"><span style="font-family: '宋体';color: rgb(0,0,0);mso-spacerun: 'yes'">第二十条</span><span style="font-family: '宋体';color: rgb(0,0,0);mso-spacerun: 'yes'">&nbsp;&nbsp;</span><span style="font-family: '宋体';color: rgb(0,0,0);mso-spacerun: 'yes'">在基金会领取报酬的理事不得超过理事总人数的</span><span style="font-family: '宋体';color: rgb(0,0,0);mso-spacerun: 'yes'">1/3</span><span style="font-family: '宋体';color: rgb(0,0,0);mso-spacerun: 'yes'">。监事和未在基金会担任专职工作的理事不得从基金会获取报酬。</span></span>
+									</p>
+									<p class="p0" style="margin-bottom: 0pt;text-align: left;margin-top: 0pt;text-indent: 21pt"><span style="font-size: 12pt"><span style="font-family: '宋体';color: rgb(0,0,0);mso-spacerun: 'yes'">第二十一条</span><span style="font-family: '宋体';color: rgb(0,0,0);mso-spacerun: 'yes'">&nbsp;&nbsp;</span><span style="font-family: '宋体';color: rgb(0,0,0);mso-spacerun: 'yes'">基金会理事遇有个人利益与基金会利益关联时，不得参与相关事宜的决策。基金会理事、监事及其近亲属不得与基金会有任何交易行为。</span></span>
+									</p>
+									<p class="p0" style="margin-bottom: 0pt;text-align: left;margin-top: 0pt;text-indent: 21pt"><span style="font-size: 12pt"><span style="font-family: '宋体';color: rgb(0,0,0);mso-spacerun: 'yes'">第二十二条</span><span style="font-family: '宋体';color: rgb(0,0,0);mso-spacerun: 'yes'">&nbsp;&nbsp;</span><span style="font-family: '宋体';color: rgb(0,0,0);mso-spacerun: 'yes'">理事会设理事长、副理事长和秘书长，从理事中选举产生。</span></span>
+									</p>
+									<p class="p0" style="margin-bottom: 0pt;text-align: left;margin-top: 0pt;text-indent: 21pt"><span style="font-size: 12pt"><span style="font-family: '宋体';color: rgb(0,0,0);mso-spacerun: 'yes'">第二十三条</span><span style="font-family: '宋体';color: rgb(0,0,0);mso-spacerun: 'yes'">&nbsp;&nbsp;</span><span style="font-family: '宋体';color: rgb(0,0,0);mso-spacerun: 'yes'">基金会理事长、副理事长、秘书长须符合以下条件：</span></span>
+									</p>
+									<p class="p0" style="margin-bottom: 0pt;text-align: left;margin-top: 0pt;text-indent: 21pt"><span style="font-size: 12pt"><span style="font-family: '宋体';color: rgb(0,0,0);mso-spacerun: 'yes'">（一）在本基金会业务领域内有较大影响；</span></span>
+									</p>
+									<p class="p0" style="margin-bottom: 0pt;text-align: left;margin-top: 0pt;text-indent: 21pt"><span style="font-size: 12pt"><span style="font-family: '宋体';color: rgb(0,0,0);mso-spacerun: 'yes'">（二）理事长、副理事长、秘书长最高任职年龄不超过</span><span style="font-family: '宋体';color: rgb(0,0,0);mso-spacerun: 'yes'">70</span><span style="font-family: '宋体';color: rgb(0,0,0);mso-spacerun: 'yes'">周岁，秘书长为专职；</span></span>
+									</p>
+									<p class="p0" style="margin-bottom: 0pt;text-align: left;margin-top: 0pt;text-indent: 21pt"><span style="font-size: 12pt"><span style="font-family: '宋体';color: rgb(0,0,0);mso-spacerun: 'yes'">（三）身体健康，能坚持正常工作；</span></span>
+									</p>
+									<p class="p0" style="margin-bottom: 0pt;text-align: left;margin-top: 0pt;text-indent: 21pt"><span style="font-size: 12pt"><span style="font-family: '宋体';color: rgb(0,0,0);mso-spacerun: 'yes'">（四）具有完全民事行为能力。</span></span>
+									</p>
+									<p class="p0" style="margin-bottom: 0pt;text-align: left;margin-top: 0pt;text-indent: 21pt"><span style="font-size: 12pt"><span style="font-family: '宋体';color: rgb(0,0,0);mso-spacerun: 'yes'">第二十四条</span><span style="font-family: '宋体';color: rgb(0,0,0);mso-spacerun: 'yes'">&nbsp;&nbsp;</span><span style="font-family: '宋体';color: rgb(0,0,0);mso-spacerun: 'yes'">有下列情形之一的人员，不能担任本基金会的理事长、副理事长、秘书长：</span></span>
+									</p>
+									<p class="p0" style="margin-bottom: 0pt;text-align: left;margin-top: 0pt;text-indent: 21pt"><span style="font-size: 12pt"><span style="font-family: '宋体';color: rgb(0,0,0);mso-spacerun: 'yes'">（一）属于现职国家工作人员的；</span></span>
+									</p>
+									<p class="p0" style="margin-bottom: 0pt;text-align: left;margin-top: 0pt;text-indent: 21pt"><span style="font-size: 12pt"><span style="font-family: '宋体';color: rgb(0,0,0);mso-spacerun: 'yes'">（二）因犯罪被判处管制、拘役或者有期徒刑，刑期执行完毕之日起未逾</span><span style="font-family: '宋体';color: rgb(0,0,0);mso-spacerun: 'yes'">5</span><span style="font-family: '宋体';color: rgb(0,0,0);mso-spacerun: 'yes'">年的；</span></span>
+									</p>
+									<p class="p0" style="margin-bottom: 0pt;text-align: left;margin-top: 0pt;text-indent: 21pt"><span style="font-size: 12pt"><span style="font-family: '宋体';color: rgb(0,0,0);mso-spacerun: 'yes'">（三）因犯罪被判处剥夺政治权利，正在执行期间或者曾经被判处剥夺政治权利的；</span></span>
+									</p>
+									<p class="p0" style="margin-bottom: 0pt;text-align: left;margin-top: 0pt;text-indent: 21pt"><span style="font-size: 12pt"><span style="font-family: '宋体';color: rgb(0,0,0);mso-spacerun: 'yes'">（四）曾在因违法被撤销登记的基金会担任理事长、副理事长或者秘书长，且对该基金会的违法行为负有个人责任，自该基金会被撤销之日起未逾</span><span style="font-family: '宋体';color: rgb(0,0,0);mso-spacerun: 'yes'">5</span><span style="font-family: '宋体';color: rgb(0,0,0);mso-spacerun: 'yes'">年的。</span></span>
+									</p>
+									<p class="p0" style="margin-bottom: 0pt;text-align: left;margin-top: 0pt;text-indent: 21pt"><span style="font-size: 12pt"><span style="font-family: '宋体';color: rgb(0,0,0);mso-spacerun: 'yes'">第二十五条</span><span style="font-family: '宋体';color: rgb(0,0,0);mso-spacerun: 'yes'">&nbsp;&nbsp;</span><span style="font-family: '宋体';color: rgb(0,0,0);mso-spacerun: 'yes'">本基金会的理事长、副理事长、秘书长每届任期</span><span style="font-family: '宋体';color: rgb(0,0,0);mso-spacerun: 'yes'">5</span><span style="font-family: '宋体';color: rgb(0,0,0);mso-spacerun: 'yes'">年，连任不超过两届。因特殊情况需超届连任的，须经理事会特殊程序表决通过，报业务主管单位审查并经登记管理机关批准同意后，方可任职。</span></span>
+									</p>
+									<p class="p0" style="margin-bottom: 0pt;text-align: left;margin-top: 0pt;text-indent: 21pt"><span style="font-size: 12pt"><span style="font-family: '宋体';color: rgb(0,0,0);mso-spacerun: 'yes'">第二十六条</span><span style="font-family: '宋体';color: rgb(0,0,0);mso-spacerun: 'yes'">&nbsp;&nbsp;</span><span style="font-family: '宋体';color: rgb(0,0,0);mso-spacerun: 'yes'">基金会理事长为基金会法定代表人。基金会法定代表人不兼任其他组织的法定代表人。基金会法定代表人应当由中国内地居民担任。基金会法定代表人在任期间，基金会发生违反《基金会管理条例》和本章程的行为，法定代表人应当承担相关责任。因法定代表人失职、导致基金会发生违法行为或基金会财产损失的，法定代表人应当承担个人责任。</span></span>
+									</p>
+									<p class="p0" style="margin-bottom: 0pt;text-align: left;margin-top: 0pt;text-indent: 21pt"><span style="font-size: 12pt"><span style="font-family: '宋体';color: rgb(0,0,0);mso-spacerun: 'yes'">第二十七条</span><span style="font-family: '宋体';color: rgb(0,0,0);mso-spacerun: 'yes'">&nbsp;&nbsp;</span><span style="font-family: '宋体';color: rgb(0,0,0);mso-spacerun: 'yes'">本基金会理事长行使下列职权：</span></span>
+									</p>
+									<p class="p0" style="margin-bottom: 0pt;text-align: left;margin-top: 0pt;text-indent: 21pt"><span style="font-size: 12pt"><span style="font-family: '宋体';color: rgb(0,0,0);mso-spacerun: 'yes'">（一）召集和主持理事会会议；</span></span>
+									</p>
+									<p class="p0" style="margin-bottom: 0pt;text-align: left;margin-top: 0pt;text-indent: 21pt"><span style="font-size: 12pt"><span style="font-family: '宋体';color: rgb(0,0,0);mso-spacerun: 'yes'">（二）检查理事会决议的落实情况；</span></span>
+									</p>
+									<p class="p0" style="margin-bottom: 0pt;text-align: left;margin-top: 0pt;text-indent: 21pt"><span style="font-size: 12pt"><span style="font-family: '宋体';color: rgb(0,0,0);mso-spacerun: 'yes'">（三）代表基金会签署重要文件；</span></span>
+									</p>
+									<p class="p0" style="margin-bottom: 0pt;text-align: left;margin-top: 0pt;text-indent: 21pt"><span style="font-size: 12pt"><span style="font-family: '宋体';color: rgb(0,0,0);mso-spacerun: 'yes'">（四）章程和理事会赋予的其他职权。</span></span>
+									</p>
+									<p class="p0" style="margin-bottom: 0pt;text-align: left;margin-top: 0pt;text-indent: 21pt"><span style="font-size: 12pt"><span style="font-family: '宋体';color: rgb(0,0,0);mso-spacerun: 'yes'">基金会副理事长，秘书长在理事长领导下开展工作，秘书长行使下列职权：</span></span>
+									</p>
+									<p class="p0" style="margin-bottom: 0pt;text-align: left;margin-top: 0pt;text-indent: 21pt"><span style="font-size: 12pt"><span style="font-family: '宋体';color: rgb(0,0,0);mso-spacerun: 'yes'">（一）主持开展日常工作，组织实施理事会决议；</span></span>
+									</p>
+									<p class="p0" style="margin-bottom: 0pt;text-align: left;margin-top: 0pt;text-indent: 21pt"><span style="font-size: 12pt"><span style="font-family: '宋体';color: rgb(0,0,0);mso-spacerun: 'yes'">（二）组织实施基金会年度公益活动计划；</span></span>
+									</p>
+									<p class="p0" style="margin-bottom: 0pt;text-align: left;margin-top: 0pt;text-indent: 21pt"><span style="font-size: 12pt"><span style="font-family: '宋体';color: rgb(0,0,0);mso-spacerun: 'yes'">（三）拟订资金的筹集、管理和使用计划；</span></span>
+									</p>
+									<p class="p0" style="margin-bottom: 0pt;text-align: left;margin-top: 0pt;text-indent: 21pt"><span style="font-size: 12pt"><span style="font-family: '宋体';color: rgb(0,0,0);mso-spacerun: 'yes'">（四）拟订基金会的内部管理规章制度，报理事会审批；</span></span>
+									</p>
+									<p class="p0" style="margin-bottom: 0pt;text-align: left;margin-top: 0pt;text-indent: 21pt"><span style="font-size: 12pt"><span style="font-family: '宋体';color: rgb(0,0,0);mso-spacerun: 'yes'">（五）协调各机构开展工作；</span></span>
+									</p>
+									<p class="p0" style="margin-bottom: 0pt;text-align: left;margin-top: 0pt;text-indent: 21pt"><span style="font-size: 12pt"><span style="font-family: '宋体';color: rgb(0,0,0);mso-spacerun: 'yes'">（六）提议聘任或解聘各机构主要负责人，由理事会决定；</span></span>
+									</p>
+									<p class="p0" style="margin-bottom: 0pt;text-align: left;margin-top: 0pt;text-indent: 21pt"><span style="font-size: 12pt"><span style="font-family: '宋体';color: rgb(0,0,0);mso-spacerun: 'yes'">（七）决定各机构专职工作人员聘用；</span></span>
+									</p>
+									<p class="p0" style="margin-bottom: 0pt;text-align: left;margin-top: 0pt;text-indent: 21pt"><span style="font-size: 12pt"><span style="font-family: '宋体';color: rgb(0,0,0);mso-spacerun: 'yes'">（八）章程和理事会赋予的其他职权。</span></span>
+									</p>
+									<p class="p0" style="margin-bottom: 0pt;text-align: left;margin-top: 0pt;text-indent: 28pt"><span style="font-size: 12pt">&nbsp;</span></p>
+									<p class="p0" style="margin-bottom: 0pt;text-align: center;margin-top: 0pt"><span style="font-size: 12pt"><span style="font-family: '黑体';color: rgb(0,0,0);mso-spacerun: 'yes'">第四章</span><span style="font-family: '宋体';color: rgb(0,0,0);mso-spacerun: 'yes'">&nbsp;&nbsp;</span><span style="font-family: '黑体';color: rgb(0,0,0);mso-spacerun: 'yes'">财产的管理和使用</span></span>
+									</p>
+									<p class="p0" style="margin-bottom: 0pt;text-align: left;margin-top: 0pt;text-indent: 21pt"><span style="font-size: 12pt"><span style="font-family: '宋体';color: rgb(0,0,0);mso-spacerun: 'yes'">第二十八条</span><span style="font-family: '宋体';color: rgb(0,0,0);mso-spacerun: 'yes'">&nbsp;&nbsp;</span><span style="font-family: '宋体';color: rgb(0,0,0);mso-spacerun: 'yes'">本基金会为非公募基金会，本基金会的收入来源于：</span></span>
+									</p>
+									<p class="p0" style="margin-bottom: 0pt;text-align: left;margin-top: 0pt;text-indent: 21pt"><span style="font-size: 12pt"><span style="font-family: '宋体';color: rgb(0,0,0);mso-spacerun: 'yes'">（一）自然人、法人或其他组织的自愿捐赠（含现钞和物资等）；</span></span>
+									</p>
+									<p class="p0" style="margin-bottom: 0pt;text-align: left;margin-top: 0pt;text-indent: 21pt"><span style="font-size: 12pt"><span style="font-family: '宋体';color: rgb(0,0,0);mso-spacerun: 'yes'">（二）投资收益；</span></span>
+									</p>
+									<p class="p0" style="margin-bottom: 0pt;text-align: left;margin-top: 0pt;text-indent: 21pt"><span style="font-size: 12pt"><span style="font-family: '宋体';color: rgb(0,0,0);mso-spacerun: 'yes'">（三）其他合法收入等。</span></span>
+									</p>
+									<p class="p0" style="margin-bottom: 0pt;text-align: left;margin-top: 0pt;text-indent: 21pt"><span style="font-size: 12pt"><span style="font-family: '宋体';color: rgb(0,0,0);mso-spacerun: 'yes'">第二十九条</span><span style="font-family: '宋体';color: rgb(0,0,0);mso-spacerun: 'yes'">&nbsp;&nbsp;</span><span style="font-family: '宋体';color: rgb(0,0,0);mso-spacerun: 'yes'">基金会接受捐赠，应当遵守法律法规，符合章程规定的宗旨和公益活动的业务范围。</span></span>
+									</p>
+									<p class="p0" style="margin-bottom: 0pt;text-align: left;margin-top: 0pt;text-indent: 21pt"><span style="font-size: 12pt"><span style="font-family: '宋体';color: rgb(0,0,0);mso-spacerun: 'yes'">第三十条</span><span style="font-family: '宋体';color: rgb(0,0,0);mso-spacerun: 'yes'">&nbsp;&nbsp;</span><span style="font-family: '宋体';color: rgb(0,0,0);mso-spacerun: 'yes'">本基金会的财产及其他收入受法律保护，任何单位、个人不得侵占、私分挪用。</span></span>
+									</p>
+									<p class="p0" style="margin-bottom: 0pt;text-align: left;margin-top: 0pt;text-indent: 21pt"><span style="font-size: 12pt"><span style="font-family: '宋体';color: rgb(0,0,0);mso-spacerun: 'yes'">第三十一条</span><span style="font-family: '宋体';color: rgb(0,0,0);mso-spacerun: 'yes'">&nbsp;&nbsp;</span><span style="font-family: '宋体';color: rgb(0,0,0);mso-spacerun: 'yes'">本基金会根据章程规定的宗旨和公益活动的业务范围使用财产；捐赠协议明确了具体使用方式的捐赠，根据捐赠协议的约定使用。接受捐赠的物资无法用于符合本基金会宗旨的用途时，基金会可以依法拍卖或者变卖，所得收入用于捐赠目的。</span></span>
+									</p>
+									<p class="p0" style="margin-bottom: 0pt;text-align: left;margin-top: 0pt;text-indent: 21pt"><span style="font-size: 12pt"><span style="font-family: '宋体';color: rgb(0,0,0);mso-spacerun: 'yes'">第三十二条</span><span style="font-family: '宋体';color: rgb(0,0,0);mso-spacerun: 'yes'">&nbsp;&nbsp;</span><span style="font-family: '宋体';color: rgb(0,0,0);mso-spacerun: 'yes'">本基金会财产主要用于：</span></span>
+									</p>
+									<p class="p0" style="margin-bottom: 0pt;text-align: left;margin-top: 0pt;text-indent: 21pt"><span style="font-size: 12pt"><span style="font-family: '宋体';color: rgb(0,0,0);mso-spacerun: 'yes'">（一）支持湖南城市学院的建造项目；</span></span>
+									</p>
+									<p class="p0" style="margin-bottom: 0pt;text-align: left;margin-top: 0pt;text-indent: 21pt"><span style="font-size: 12pt"><span style="font-family: '宋体';color: rgb(0,0,0);mso-spacerun: 'yes'">（二）更新湖南城市学院的教学设备和科研设备；</span></span>
+									</p>
+									<p class="p0" style="margin-bottom: 0pt;text-align: left;margin-top: 0pt;text-indent: 21pt"><span style="font-size: 12pt"><span style="font-family: '宋体';color: rgb(0,0,0);mso-spacerun: 'yes'">（三）奖励作出突出贡献的优秀教职工；</span></span>
+									</p>
+									<p class="p0" style="margin-bottom: 0pt;text-align: left;margin-top: 0pt;text-indent: 21pt"><span style="font-size: 12pt"><span style="font-family: '宋体';color: rgb(0,0,0);mso-spacerun: 'yes'">（四）资助特别困难的学生完成学业；</span></span>
+									</p>
+									<p class="p0" style="margin-bottom: 0pt;text-align: left;margin-top: 0pt;text-indent: 21pt"><span style="font-size: 12pt"><span style="font-family: '宋体';color: rgb(0,0,0);mso-spacerun: 'yes'">（五）按照捐赠者意愿定向资助的项目；</span></span>
+									</p>
+									<p class="p0" style="margin-bottom: 0pt;text-align: left;margin-top: 0pt;text-indent: 21pt"><span style="font-size: 12pt"><span style="font-family: '宋体';color: rgb(0,0,0);mso-spacerun: 'yes'">（六）开展基金会日常工作。</span></span>
+									</p>
+									<p class="p0" style="margin-bottom: 0pt;text-align: left;margin-top: 0pt;text-indent: 21pt"><span style="font-size: 12pt"><span style="font-family: '宋体';color: rgb(0,0,0);mso-spacerun: 'yes'">第三十三条</span><span style="font-family: '宋体';color: rgb(0,0,0);mso-spacerun: 'yes'">&nbsp;&nbsp;</span><span style="font-family: '宋体';color: rgb(0,0,0);mso-spacerun: 'yes'">本基金会的重大募捐、投资活动是指：</span></span>
+									</p>
+									<p class="p0" style="margin-bottom: 0pt;text-align: left;margin-top: 0pt;text-indent: 21pt"><span style="font-size: 12pt"><span style="font-family: '宋体';color: rgb(0,0,0);mso-spacerun: 'yes'">（一）一次性捐赠在</span><span style="font-family: '宋体';color: rgb(0,0,0);mso-spacerun: 'yes'">50</span><span style="font-family: '宋体';color: rgb(0,0,0);mso-spacerun: 'yes'">万元以上的捐赠活动；</span></span>
+									</p>
+									<p class="p0" style="margin-bottom: 0pt;text-align: left;margin-top: 0pt;text-indent: 21pt"><span style="font-size: 12pt"><span style="font-family: '宋体';color: rgb(0,0,0);mso-spacerun: 'yes'">（二）一次性投资在</span><span style="font-family: '宋体';color: rgb(0,0,0);mso-spacerun: 'yes'">50</span><span style="font-family: '宋体';color: rgb(0,0,0);mso-spacerun: 'yes'">万元以上的投资活动；</span></span>
+									</p>
+									<p class="p0" style="margin-bottom: 0pt;text-align: left;margin-top: 0pt;text-indent: 21pt"><span style="font-size: 12pt"><span style="font-family: '宋体';color: rgb(0,0,0);mso-spacerun: 'yes'">（三）在学校庆典等重大活动中的系列募捐活动。</span></span>
+									</p>
+									<p class="p0" style="margin-bottom: 0pt;text-align: left;margin-top: 0pt;text-indent: 21pt"><span style="font-size: 12pt"><span style="font-family: '宋体';color: rgb(0,0,0);mso-spacerun: 'yes'">第三十四条</span><span style="font-family: '宋体';color: rgb(0,0,0);mso-spacerun: 'yes'">&nbsp;&nbsp;</span><span style="font-family: '宋体';color: rgb(0,0,0);mso-spacerun: 'yes'">本基金会按照合法、安全、有效的原则实现基金的保值、增值。</span></span>
+									</p>
+									<p class="p0" style="margin-bottom: 0pt;text-align: left;margin-top: 0pt;text-indent: 21pt"><span style="font-size: 12pt"><span style="font-family: '宋体';color: rgb(0,0,0);mso-spacerun: 'yes'">第三十五条</span><span style="font-family: '宋体';color: rgb(0,0,0);mso-spacerun: 'yes'">&nbsp;&nbsp;</span><span style="font-family: '宋体';color: rgb(0,0,0);mso-spacerun: 'yes'">本基金会每年用于从事章程规定的公益事业支出，不得低于上一年基金余额的</span><span style="font-family: '宋体';color: rgb(0,0,0);mso-spacerun: 'yes'">8%</span><span style="font-family: '宋体';color: rgb(0,0,0);mso-spacerun: 'yes'">。本基金会工作人员的工资福利和行政办公支出不超过当年总支出的</span><span style="font-family: '宋体';color: rgb(0,0,0);mso-spacerun: 'yes'">10%</span><span style="font-family: '宋体';color: rgb(0,0,0);mso-spacerun: 'yes'">。</span></span>
+									</p>
+									<p class="p0" style="margin-bottom: 0pt;text-align: left;margin-top: 0pt;text-indent: 21pt"><span style="font-size: 12pt"><span style="font-family: '宋体';color: rgb(0,0,0);mso-spacerun: 'yes'">第三十六条</span><span style="font-family: '宋体';color: rgb(0,0,0);mso-spacerun: 'yes'">&nbsp;&nbsp;</span><span style="font-family: '宋体';color: rgb(0,0,0);mso-spacerun: 'yes'">本基金会开展公益资助项目，应当向社会公开所开展的公益资助项目种类以及申请、评审程序。</span></span>
+									</p>
+									<p class="p0" style="margin-bottom: 0pt;text-align: left;margin-top: 0pt;text-indent: 21pt"><span style="font-size: 12pt"><span style="font-family: '宋体';color: rgb(0,0,0);mso-spacerun: 'yes'">第三十七条</span><span style="font-family: '宋体';color: rgb(0,0,0);mso-spacerun: 'yes'">&nbsp;&nbsp;</span><span style="font-family: '宋体';color: rgb(0,0,0);mso-spacerun: 'yes'">捐赠人有权向本基金会查询捐赠财产的使用、管理情况，并提出意见和建议。对于捐赠人的查询，基金会应当及时如实答复。本基金会违反捐赠协议使用捐赠财产的，捐赠人有权要求基金会遵守捐赠协议或者向人民法院申请撤销捐赠行为、解除捐赠协议。</span></span>
+									</p>
+									<p class="p0" style="margin-bottom: 0pt;text-align: left;margin-top: 0pt;text-indent: 21pt"><span style="font-size: 12pt"><span style="font-family: '宋体';color: rgb(0,0,0);mso-spacerun: 'yes'">第三十八条</span><span style="font-family: '宋体';color: rgb(0,0,0);mso-spacerun: 'yes'">&nbsp;&nbsp;</span><span style="font-family: '宋体';color: rgb(0,0,0);mso-spacerun: 'yes'">本基金会可以与受助人签订协议，约定资助方式、资助数额以及资金用途和使用方式。本基金会有权对资助的使用情况进行监督。受助人未按协议约定使用资助或者有其他违反协议情况的，本基金会有权解除资助协议。</span></span>
+									</p>
+									<p class="p0" style="margin-bottom: 0pt;text-align: left;margin-top: 0pt;text-indent: 21pt"><span style="font-size: 12pt"><span style="font-family: '宋体';color: rgb(0,0,0);mso-spacerun: 'yes'">第三十九条</span><span style="font-family: '宋体';color: rgb(0,0,0);mso-spacerun: 'yes'">&nbsp;&nbsp;</span><span style="font-family: '宋体';color: rgb(0,0,0);mso-spacerun: 'yes'">本基金会应当执行国家统一的会计制度，依法进行会计核算、建立健全内部会计监督制度，保证会计资料合法、真实、准确、完整。本基金会接受税务、会计主管部门依法实施的税务监督和会计监督。</span></span>
+									</p>
+									<p class="p0" style="margin-bottom: 0pt;text-align: left;margin-top: 0pt;text-indent: 21pt"><span style="font-size: 12pt"><span style="font-family: '宋体';color: rgb(0,0,0);mso-spacerun: 'yes'">第四十条</span><span style="font-family: '宋体';color: rgb(0,0,0);mso-spacerun: 'yes'">&nbsp;&nbsp;</span><span style="font-family: '宋体';color: rgb(0,0,0);mso-spacerun: 'yes'">本基金会配备具有专业资格的会计人员。会计人员调动工作或离职时，必须与接管人员办清交接手续。</span></span>
+									</p>
+									<p class="p0" style="margin-bottom: 0pt;text-align: left;margin-top: 0pt;text-indent: 21pt"><span style="font-size: 12pt"><span style="font-family: '宋体';color: rgb(0,0,0);mso-spacerun: 'yes'">第四十一条</span><span style="font-family: '宋体';color: rgb(0,0,0);mso-spacerun: 'yes'">&nbsp;&nbsp;</span><span style="font-family: '宋体';color: rgb(0,0,0);mso-spacerun: 'yes'">本基金会每年</span><span style="font-family: '宋体';color: rgb(0,0,0);mso-spacerun: 'yes'">1</span><span style="font-family: '宋体';color: rgb(0,0,0);mso-spacerun: 'yes'">月</span><span style="font-family: '宋体';color: rgb(0,0,0);mso-spacerun: 'yes'">1</span><span style="font-family: '宋体';color: rgb(0,0,0);mso-spacerun: 'yes'">日至</span><span style="font-family: '宋体';color: rgb(0,0,0);mso-spacerun: 'yes'">12</span><span style="font-family: '宋体';color: rgb(0,0,0);mso-spacerun: 'yes'">月</span><span style="font-family: '宋体';color: rgb(0,0,0);mso-spacerun: 'yes'">31</span><span style="font-family: '宋体';color: rgb(0,0,0);mso-spacerun: 'yes'">日为业务及会计年度，每年</span><span style="font-family: '宋体';color: rgb(0,0,0);mso-spacerun: 'yes'">3</span><span style="font-family: '宋体';color: rgb(0,0,0);mso-spacerun: 'yes'">月</span><span style="font-family: '宋体';color: rgb(0,0,0);mso-spacerun: 'yes'">31</span><span style="font-family: '宋体';color: rgb(0,0,0);mso-spacerun: 'yes'">日前，理事会对下列事项进行审定：</span></span>
+									</p>
+									<p class="p0" style="margin-bottom: 0pt;text-align: left;margin-top: 0pt;text-indent: 21pt"><span style="font-size: 12pt"><span style="font-family: '宋体';color: rgb(0,0,0);mso-spacerun: 'yes'">（一）上年度业务报告及经费收支决算；</span></span>
+									</p>
+									<p class="p0" style="margin-bottom: 0pt;text-align: left;margin-top: 0pt;text-indent: 21pt"><span style="font-size: 12pt"><span style="font-family: '宋体';color: rgb(0,0,0);mso-spacerun: 'yes'">（二）本年度业务计划及经费收支预算；</span></span>
+									</p>
+									<p class="p0" style="margin-bottom: 0pt;text-align: left;margin-top: 0pt;text-indent: 21pt"><span style="font-size: 12pt"><span style="font-family: '宋体';color: rgb(0,0,0);mso-spacerun: 'yes'">（三）财产清册（当年度捐赠者名册及有关资料）。</span></span>
+									</p>
+									<p class="p0" style="margin-bottom: 0pt;text-align: left;margin-top: 0pt;text-indent: 21pt"><span style="font-size: 12pt"><span style="font-family: '宋体';color: rgb(0,0,0);mso-spacerun: 'yes'">第四十二条</span><span style="font-family: '宋体';color: rgb(0,0,0);mso-spacerun: 'yes'">&nbsp;&nbsp;</span><span style="font-family: '宋体';color: rgb(0,0,0);mso-spacerun: 'yes'">本基金会进行年检、换届、更换法定代表人以及清算，应当进行财务审计。</span></span>
+									</p>
+									<p class="p0" style="margin-bottom: 0pt;text-align: left;margin-top: 0pt;text-indent: 21pt"><span style="font-size: 12pt"><span style="font-family: '宋体';color: rgb(0,0,0);mso-spacerun: 'yes'">第四十三条</span><span style="font-family: '宋体';color: rgb(0,0,0);mso-spacerun: 'yes'">&nbsp;&nbsp;</span><span style="font-family: '宋体';color: rgb(0,0,0);mso-spacerun: 'yes'">本基金会按照《基金会管理条例》规定接受登记管理机关组织的年度检查。</span></span>
+									</p>
+									<p class="p0" style="margin-bottom: 0pt;text-align: left;margin-top: 0pt;text-indent: 21pt"><span style="font-size: 12pt"><span style="font-family: '宋体';color: rgb(0,0,0);mso-spacerun: 'yes'">第四十四条</span><span style="font-family: '宋体';color: rgb(0,0,0);mso-spacerun: 'yes'">&nbsp;&nbsp;</span><span style="font-family: '宋体';color: rgb(0,0,0);mso-spacerun: 'yes'">本基金会通过登记管理机关的年度检查后，将年度工作报告在登记管理机关指定的媒体上公布，接受社会公众的查询、监督。</span></span>
+									</p>
+									<p class="p0" style="margin-bottom: 0pt;text-align: left;margin-top: 0pt;text-indent: 28pt"><span style="font-size: 12pt">&nbsp;</span></p>
+									<p class="p0" style="margin-bottom: 0pt;text-align: center;margin-top: 0pt"><span style="font-size: 12pt"><span style="font-family: '黑体';color: rgb(0,0,0);mso-spacerun: 'yes'">第五章</span><span style="font-family: '宋体';color: rgb(0,0,0);mso-spacerun: 'yes'">&nbsp;&nbsp;</span><span style="font-family: '黑体';color: rgb(0,0,0);mso-spacerun: 'yes'">终止和剩余财产处理</span></span>
+									</p>
+									<p class="p0" style="margin-bottom: 0pt;text-align: left;margin-top: 0pt;text-indent: 21pt"><span style="font-size: 12pt"><span style="font-family: '黑体';color: rgb(0,0,0);mso-spacerun: 'yes'">第四十五条</span><span style="font-family: '宋体';color: rgb(0,0,0);mso-spacerun: 'yes'">&nbsp;&nbsp;</span><span style="font-family: '宋体';color: rgb(0,0,0);mso-spacerun: 'yes'">本基金会有以下情形之一，应当终止：</span></span>
+									</p>
+									<p class="p0" style="margin-bottom: 0pt;text-align: left;margin-top: 0pt;text-indent: 21pt"><span style="font-size: 12pt"><span style="font-family: '宋体';color: rgb(0,0,0);mso-spacerun: 'yes'">（一）完成章程规定的宗旨的；</span></span>
+									</p>
+									<p class="p0" style="margin-bottom: 0pt;text-align: left;margin-top: 0pt;text-indent: 21pt"><span style="font-size: 12pt"><span style="font-family: '宋体';color: rgb(0,0,0);mso-spacerun: 'yes'">（二）无法按照章程规定的宗旨继续从事公益活动的；</span></span>
+									</p>
+									<p class="p0" style="margin-bottom: 0pt;text-align: left;margin-top: 0pt;text-indent: 21pt"><span style="font-size: 12pt"><span style="font-family: '宋体';color: rgb(0,0,0);mso-spacerun: 'yes'">（三）基金会发展分立、合并的。</span></span>
+									</p>
+									<p class="p0" style="margin-bottom: 0pt;text-align: left;margin-top: 0pt;text-indent: 21pt"><span style="font-size: 12pt"><span style="font-family: '黑体';color: rgb(0,0,0);mso-spacerun: 'yes'">第四十六条</span><span style="font-family: '宋体';color: rgb(0,0,0);mso-spacerun: 'yes'">&nbsp;</span><span style="font-family: '宋体';color: rgb(0,0,0);mso-spacerun: 'yes'">&nbsp;</span><span style="font-family: '宋体';color: rgb(0,0,0);mso-spacerun: 'yes'">本基金会终止，应在理事会表决通过后</span><span style="font-family: '宋体';color: rgb(0,0,0);mso-spacerun: 'yes'">15</span><span style="font-family: '宋体';color: rgb(0,0,0);mso-spacerun: 'yes'">日内，报业务主管单位审查同意。经业务主管单位审查同意后</span><span style="font-family: '宋体';color: rgb(0,0,0);mso-spacerun: 'yes'">15</span><span style="font-family: '宋体';color: rgb(0,0,0);mso-spacerun: 'yes'">日内，向登记管理机关申请注销登记。</span></span>
+									</p>
+									<p class="p0" style="margin-bottom: 0pt;text-align: left;margin-top: 0pt;text-indent: 21pt"><span style="font-size: 12pt"><span style="font-family: '黑体';color: rgb(0,0,0);mso-spacerun: 'yes'">第四十七条</span><span style="font-family: '宋体';color: rgb(0,0,0);mso-spacerun: 'yes'">&nbsp;&nbsp;</span><span style="font-family: '宋体';color: rgb(0,0,0);mso-spacerun: 'yes'">本基金会办理注销登记前，应当在登记管理机关、业务主管单位的指导下成立清算组织，完成清算工作。本基金会应当自清算结束之日起</span><span style="font-family: '宋体';color: rgb(0,0,0);mso-spacerun: 'yes'">15</span><span style="font-family: '宋体';color: rgb(0,0,0);mso-spacerun: 'yes'">日内向登记管理机关办理注销登记；在清算期间不开展清算以外的活动。</span></span>
+									</p>
+									<p class="p0" style="margin-bottom: 0pt;text-align: left;margin-top: 0pt;text-indent: 21pt"><span style="font-size: 12pt"><span style="font-family: '黑体';color: rgb(0,0,0);mso-spacerun: 'yes'">第四十八条</span><span style="font-family: '宋体';color: rgb(0,0,0);mso-spacerun: 'yes'">&nbsp;</span><span style="font-family: '宋体';color: rgb(0,0,0);mso-spacerun: 'yes'">&nbsp;</span><span style="font-family: '宋体';color: rgb(0,0,0);mso-spacerun: 'yes'">本基金会注销后的剩余财产，应当在业务主管单位和登记管理机关的监督下，通过以下方式用于公益目的。</span></span>
+									</p>
+									<p class="p0" style="margin-bottom: 0pt;text-align: left;margin-top: 0pt"><span style="font-size: 12pt"><span style="font-family: '宋体';color: rgb(0,0,0);mso-spacerun: 'yes'">将剩余财产转入湖南城市学院计划财务处，由湖南城市学院按照本基金会原章程精神，专款专用。</span></span>
+									</p>
+									<p class="p0" style="margin-bottom: 0pt;text-align: left;margin-top: 0pt"><span style="font-size: 12pt">&nbsp;</span></p>
+									<p class="p0" style="margin-bottom: 0pt;text-align: center;margin-top: 0pt"><span style="font-size: 12pt"><span style="font-family: '黑体';color: rgb(0,0,0);mso-spacerun: 'yes'">第六章</span><span style="font-family: '宋体';color: rgb(0,0,0);mso-spacerun: 'yes'">&nbsp;&nbsp;</span><span style="font-family: '黑体';color: rgb(0,0,0);mso-spacerun: 'yes'">章程修改</span></span>
+									</p>
+									<p class="p0" style="margin-bottom: 0pt;text-align: left;margin-top: 0pt;text-indent: 28.5pt"><span style="font-size: 12pt"><span style="font-family: '黑体';color: rgb(0,0,0);mso-spacerun: 'yes'">第四十九条</span><span style="font-family: '宋体';color: rgb(0,0,0);mso-spacerun: 'yes'">&nbsp;</span><span style="font-family: '宋体';color: rgb(0,0,0);mso-spacerun: 'yes'">&nbsp;</span><span style="font-family: '宋体';color: rgb(0,0,0);mso-spacerun: 'yes'">本章程的修改，须经理事会表决通过后</span><span style="font-family: '宋体';color: rgb(0,0,0);mso-spacerun: 'yes'">15</span><span style="font-family: '宋体';color: rgb(0,0,0);mso-spacerun: 'yes'">日内，报业务主管单位审查同意。经业务主管单位审查同意后报登记管理机关核准。</span></span>
+									</p>
+									<p class="p0" style="margin-bottom: 0pt;text-align: left;margin-top: 0pt;text-indent: 28.5pt"><span style="font-size: 12pt">&nbsp;</span></p>
+									<p class="p0" style="margin-bottom: 0pt;text-align: center;margin-top: 0pt"><span style="font-size: 12pt"><span style="font-family: '黑体';color: rgb(0,0,0);mso-spacerun: 'yes'">第七章</span><span style="font-family: '宋体';color: rgb(0,0,0);mso-spacerun: 'yes'">&nbsp;&nbsp;</span><span style="font-family: '黑体';color: rgb(0,0,0);mso-spacerun: 'yes'">附</span><span style="font-family: '宋体';color: rgb(0,0,0);mso-spacerun: 'yes'">&nbsp;&nbsp;</span><span style="font-family: '黑体';color: rgb(0,0,0);mso-spacerun: 'yes'">则</span></span>
+									</p>
+									<p class="p0" style="margin-bottom: 0pt;text-align: left;margin-top: 0pt;text-indent: 28.5pt"><span style="font-size: 12pt"><span style="font-family: '黑体';color: rgb(0,0,0);mso-spacerun: 'yes'">第五十条</span><span style="font-family: '宋体';color: rgb(0,0,0);mso-spacerun: 'yes'">&nbsp;&nbsp;</span><span style="font-family: '宋体';color: rgb(0,0,0);mso-spacerun: 'yes'">本章程经</span><span style="font-family: '宋体';color: rgb(0,0,0);mso-spacerun: 'yes'">2007</span><span style="font-family: '宋体';color: rgb(0,0,0);mso-spacerun: 'yes'">年</span><span style="font-family: '宋体';color: rgb(0,0,0);mso-spacerun: 'yes'">5</span><span style="font-family: '宋体';color: rgb(0,0,0);mso-spacerun: 'yes'">月</span><span style="font-family: '宋体';color: rgb(0,0,0);mso-spacerun: 'yes'">18</span><span style="font-family: '宋体';color: rgb(0,0,0);mso-spacerun: 'yes'">日理事会表决通过。</span></span>
+									</p>
+									<p class="p0" style="margin-bottom: 0pt;text-align: left;margin-top: 0pt;text-indent: 28.5pt"><span style="font-size: 12pt"><span style="font-family: '黑体';color: rgb(0,0,0);mso-spacerun: 'yes'">第五十一条</span><span style="font-family: '宋体';color: rgb(0,0,0);mso-spacerun: 'yes'">&nbsp;&nbsp;</span><span style="font-family: '宋体';color: rgb(0,0,0);mso-spacerun: 'yes'">本章程的解释权属于本基金会理事会。</span></span>
+									</p>
+									<p class="p0" style="margin-bottom: 0pt;text-align: left;margin-top: 0pt;text-indent: 28.5pt"><span style="font-size: 12pt"><span style="font-family: '黑体';color: rgb(0,0,0);mso-spacerun: 'yes'">第五十二条</span><span style="font-family: '宋体';color: rgb(0,0,0);mso-spacerun: 'yes'">&nbsp;&nbsp;</span><span style="font-family: '宋体';color: rgb(0,0,0);mso-spacerun: 'yes'">本章程自登记管理机关核准之日起生效。</span></span>
+									</p>
+									<p class="p0" style="margin-bottom: 0pt;word-break: break-all;text-align: right;margin-top: 0pt"><span style="font-size: 12pt"><span style="font-family: '宋体';color: rgb(0,0,0);mso-spacerun: 'yes'">湖南城市学院教育发展基金会</span><span style="font-family: '宋体';color: rgb(0,0,0);mso-spacerun: 'yes'">&nbsp;&nbsp;&nbsp;</span></span>
+									</p>
+									<p class="p0" style="margin-bottom: 0pt;word-break: break-all;text-align: right;margin-top: 0pt"><span style="font-size: 12pt"><span style="font-family: '宋体';color: rgb(0,0,0);mso-spacerun: 'yes'">2007</span><span style="font-family: '宋体';color: rgb(0,0,0);mso-spacerun: 'yes'">年</span><span style="font-family: '宋体';color: rgb(0,0,0);mso-spacerun: 'yes'">5</span><span style="font-family: '宋体';color: rgb(0,0,0);mso-spacerun: 'yes'">月</span><span style="font-family: '宋体';color: rgb(0,0,0);mso-spacerun: 'yes'">19</span><span style="font-family: '宋体';color: rgb(0,0,0);mso-spacerun: 'yes'">日&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></span>
+									</p>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+
+			</div>
+		</div>
+		<div class="clear"></div>
+	</body>
+
+</html>

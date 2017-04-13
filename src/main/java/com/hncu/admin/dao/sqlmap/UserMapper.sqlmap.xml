@@ -1,0 +1,488 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.hncu.admin.dao.mapper.UserMapper">
+    <sql id="userColumns">
+        u.id,
+        u.no,
+        u.name,
+        u.login_name as "loginName",
+        u.password,
+        u.role_id as "role.id",
+        u.id_card as "idCard",
+        u.sex,
+        u.native_pleace as "nativePleace",
+        u.secrecy_flag as "secrecyFlag",
+        u.header_pic as "headerPic",
+        u.mobile,
+        u.email,
+        u.classes as "classes",
+        u.enrollment_year as "enrollmentYear",
+        u.department_no AS "department.id",
+        u.major_id as "major.id",
+        u.branch_id as "branch.id",
+        u.wechat,
+        u.qq,
+        u.address,
+        u.homephone,
+        u.postcode,
+        u.introduction,
+        u.enterprise_address AS "enterpriseAddress",
+        u.industry_category as "industryCategory",
+        u.login_ip as "loginIp",
+        u.login_date as "loginDate",
+        u.login_flag as "loginFlag",
+        u.create_by as "createBy.id",
+        u.create_date as "createDate",
+        u.update_by as "updateBy.id",
+        u.update_date as "updateDate",
+        u.remarks,
+        d.name as "department.name",
+        m.name as "major.name",
+        b.name as "branch.name",
+        r.name as "role.name"
+    </sql>
+
+    <sql id="userJoins">
+        LEFT JOIN admin_department d on d.d_no = u.department_no
+        LEFT JOIN admin_major m on m.id = u.major_id
+        LEFT JOIN admin_branch b on b.id = u.branch_id
+        LEFT JOIN admin_role r on r.id = u.role_id
+    </sql>
+
+    <select id="queryList" parameterType="User" resultType="User">
+        SELECT <include refid="userColumns" />
+        FROM admin_user u
+        <include refid="userJoins" />
+        WHERE u.del_flag = #{DEL_FLAG_NORMAL}
+        and u.role_id = '2'
+        <if test="no != null and no != ''">
+            and u.no = #{no,jdbcType=VARCHAR}
+        </if>
+        <if test="name != null and name != ''">
+            and u.name like concat ('%', #{name}, '%')
+        </if>
+        <if test="branch != null and branch.id != null and branch.id != ''">
+            and u.branch_id = #{branch.id,jdbcType=INTEGER}
+        </if>
+        <if test="classes != null and classes!= ''">
+            and u.classes like concat ('%', #{classes}, '%')
+        </if>
+        <if test="department != null and department.dNo != null and department.dNo != ''">
+            and u.department_no = #{department.dNo,jdbcType=INTEGER}
+        </if>
+        <if test="enrollmentYear != null and enrollmentYear != ''">
+            and u.enrollment_year = #{enrollmentYear,jdbcType=VARCHAR}
+        </if>
+        ORDER BY u.no ASC
+    </select>
+
+    <select id="queryById" parameterType="string" resultType="User">
+        SELECT <include refid="userColumns" />
+        FROM admin_user u
+        <include refid="userJoins" />
+        WHERE u.id = #{id, jdbcType=NUMERIC}
+        and u.del_flag = '0'
+    </select>
+    <select id="queryUserByLoginName" resultType="User">
+        SELECT <include refid="userColumns" />
+        FROM admin_user u
+        <include refid="userJoins" />
+        WHERE u.login_name = #{loginName}
+        OR u.id_card = #{loginName}
+        and u.del_flag = #{DEL_FLAG_NORMAL}
+    </select>
+    <select id="queryAlumniCount" resultType="int">
+        SELECT count(1)  FROM admin_user u WHERE u.role_id = '2'
+    </select>
+    <insert id="insert" parameterType="User" useGeneratedKeys="true" keyProperty="id" keyColumn="id">
+        insert into admin_user
+        <trim prefix="(" suffix=")" suffixOverrides="," >
+
+            <if test="no != null" >
+                no,
+            </if>
+            <if test="name != null" >
+                name,
+            </if>
+            <if test="loginName != null" >
+                login_name,
+            </if>
+            <if test="password != null" >
+                password,
+            </if>
+            <if test="role != null and role.id != null and role.id != ''">
+                role_id,
+            </if>
+            <if test="idCard != null">
+                id_card,
+            </if>
+            <if test="sex != null">
+                sex,
+            </if>
+            <if test="nativePleace != null">
+                native_pleace,
+            </if>
+            <if test="secrecyFlag != null">
+                secrecy_flag,
+            </if>
+            <if test="headerPic != null">
+                header_pic,
+            </if>
+            <if test="mobile != null" >
+                mobile,
+            </if>
+            <if test="email != null" >
+                email,
+            </if>
+            <if test="classes != null">
+                classes,
+            </if>
+            <if test="enrollmentYear != null">
+                enrollment_year,
+            </if>
+            <if test="department != null and department.dNo != null and department.dNo != ''" >
+                department_no,
+            </if>
+            <if test="major != null and major.id != null and major.id != ''" >
+                major_id,
+            </if>
+            <if test="branch != null and branch.id != null and branch.id != ''" >
+                branch_id,
+            </if>
+            <if test="wechat != null">
+                wechat,
+            </if>
+            <if test="qq != null">
+                qq,
+            </if>
+            <if test="address != null">
+                address,
+            </if>
+            <if test="homephone != null" >
+                homephone,
+            </if>
+            <if test="postcode != null">
+                postcode,
+            </if>
+            <if test="introduction != null">
+                introduction,
+            </if>
+            <if test="enterpriseAddress != null">
+                enterprise_address,
+            </if>
+            <if test="industryCategory != null">
+                industry_category,
+            </if>
+            <if test="loginFlag != null" >
+                login_flag,
+            </if>
+            <if test="loginIp != null" >
+                login_ip,
+            </if>
+            <if test="loginDate != null" >
+                login_date,
+            </if>
+            <if test="createBy != null" >
+                create_by,
+            </if>
+            <if test="createDate != null" >
+                create_date,
+            </if>
+            <if test="updateBy != null" >
+                update_by,
+            </if>
+            <if test="updateDate != null" >
+                update_date,
+            </if>
+            <if test="remarks != null" >
+                remarks,
+            </if>
+            <if test="delFlag != null" >
+                del_flag,
+            </if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides="," >
+
+            <if test="no != null" >
+                #{no,jdbcType=VARCHAR},
+            </if>
+            <if test="name != null" >
+                #{name,jdbcType=VARCHAR},
+            </if>
+            <if test="loginName != null" >
+                #{loginName,jdbcType=VARCHAR},
+            </if>
+            <if test="password != null" >
+                #{password,jdbcType=VARCHAR},
+            </if>
+            <if test="role != null and role.id != null and role.id != ''">
+                #{role.id,jdbcType=INTEGER},
+            </if>
+            <if test="idCard != null">
+                #{idCard,jdbcType=VARCHAR},
+            </if>
+            <if test="sex != null">
+                #{sex,jdbcType=INTEGER},
+            </if>
+            <if test="nativePleace != null">
+                #{nativePleace,jdbcType=VARCHAR},
+            </if>
+            <if test="secrecyFlag != null">
+                #{secrecyFlag,jdbcType=INTEGER},
+            </if>
+            <if test="headerPic != null">
+                #{headerPic,jdbcType=VARCHAR},
+            </if>
+            <if test="mobile != null" >
+                #{mobile,jdbcType=VARCHAR},
+            </if>
+            <if test="email != null" >
+                #{email,jdbcType=VARCHAR},
+            </if>
+            <if test="classes != null">
+                #{classes,jdbcType=VARCHAR},
+            </if>
+            <if test="enrollmentYear != null">
+                #{enrollmentYear,jdbcType=VARCHAR},
+            </if>
+            <if test="department != null and department.dNo != null and department.dNo != ''" >
+                #{department.dNo,jdbcType=INTEGER},
+            </if>
+            <if test="major != null and major.id != null and major.id != ''" >
+                #{major.id,jdbcType=INTEGER},
+            </if>
+            <if test="branch != null and branch.id != null and branch.id != ''" >
+                #{branch.id,jdbcType=INTEGER},
+            </if>
+            <if test="wechat != null">
+                #{wechat,jdbcType=VARCHAR},
+            </if>
+            <if test="qq != null">
+                #{qq,jdbcType=VARCHAR},
+            </if>
+            <if test="address != null">
+                #{address,jdbcType=VARCHAR},
+            </if>
+            <if test="homephone != null" >
+                #{homephone,jdbcType=VARCHAR},
+            </if>
+            <if test="postcode != null">
+                #{postcode,jdbcType=VARCHAR},
+            </if>
+            <if test="introduction != null">
+                #{introduction,jdbcType=VARCHAR},
+            </if>
+            <if test="enterpriseAddress != null">
+                #{enterpriseAddress,jdbcType=VARCHAR},
+            </if>
+            <if test="industryCategory != null">
+                #{industryCategory,jdbcType=VARCHAR},
+            </if>
+            <if test="loginFlag != null" >
+                #{loginFlag,jdbcType=VARCHAR},
+            </if>
+            <if test="loginIp != null" >
+                #{loginIp,jdbcType=VARCHAR},
+            </if>
+            <if test="loginDate != null" >
+                #{loginDate,jdbcType=TIMESTAMP},
+            </if>
+            <if test="createBy != null" >
+                #{createBy.id,jdbcType=VARCHAR},
+            </if>
+            <if test="createDate != null" >
+                #{createDate,jdbcType=TIMESTAMP},
+            </if>
+            <if test="updateBy != null" >
+                #{updateBy.id,jdbcType=VARCHAR},
+            </if>
+            <if test="updateDate != null" >
+                #{updateDate,jdbcType=TIMESTAMP},
+            </if>
+            <if test="remarks != null" >
+                #{remarks,jdbcType=VARCHAR},
+            </if>
+            <if test="delFlag != null" >
+                #{delFlag,jdbcType=VARCHAR},
+            </if>
+        </trim>
+    </insert>
+    <insert id="insertUserRole">
+        INSERT INTO pm_sys_user_role (user_id, role_id)
+        <!--oracle 批量插入的写法
+        <foreach collection="roleList" item="role" separator=" union all">
+          SELECT #{id,jdbcType=INTEGER}, #{role.id,jdbcType=INTEGER} from dual
+        </foreach>
+        -->
+        VALUES
+        <foreach collection="roleList" item="role" separator=",">
+            (#{id,jdbcType=INTEGER}, #{role.id,jdbcType=INTEGER})
+        </foreach>
+    </insert>
+
+    <update id="update" parameterType="User">
+        update admin_user
+        <set >
+            <if test="no != null" >
+                #{no,jdbcType=VARCHAR},
+            </if>
+            <if test="name != null" >
+                #{name,jdbcType=VARCHAR},
+            </if>
+            <if test="idCard != null">
+                #{idCard,jdbcType=VARCHAR},
+            </if>
+            <if test="sex != null">
+                #{sex,jdbcType=INTEGER},
+            </if>
+            <if test="nativePleace != null">
+                #{nativePleace,jdbcType=VARCHAR},
+            </if>
+            <if test="secrecyFlag != null">
+                #{secrecyFlag,jdbcType=INTEGER},
+            </if>
+            <if test="headerPic != null">
+                #{headerPic,jdbcType=VARCHAR},
+            </if>
+            <if test="mobile != null" >
+                #{mobile,jdbcType=VARCHAR},
+            </if>
+            <if test="email != null" >
+                #{email,jdbcType=VARCHAR},
+            </if>
+            <if test="classes != null">
+                #{classes,jdbcType=VARCHAR},
+            </if>
+            <if test="enrollmentYear != null">
+                #{enrollmentYear,jdbcType=VARCHAR},
+            </if>
+            <if test="department != null and department.dNo != null and department.dNo != ''" >
+                #{department.dNo,jdbcType=INTEGER},
+            </if>
+            <if test="major != null and major.id != null and major.id != ''" >
+                #{major.id,jdbcType=INTEGER},
+            </if>
+            <if test="branch != null and branch.id != null and branch.id != ''" >
+                #{branch.id,jdbcType=INTEGER},
+            </if>
+            <if test="wechat != null">
+                #{wechat,jdbcType=VARCHAR},
+            </if>
+            <if test="qq != null">
+                #{qq,jdbcType=VARCHAR},
+            </if>
+            <if test="address != null">
+                #{address,jdbcType=VARCHAR},
+            </if>
+            <if test="homephone != null" >
+                #{homephone,jdbcType=VARCHAR},
+            </if>
+            <if test="postcode != null">
+                #{postcode,jdbcType=VARCHAR},
+            </if>
+            <if test="introduction != null">
+                #{introduction,jdbcType=VARCHAR},
+            </if>
+            <if test="enterpriseAddress != null">
+                #{enterpriseAddress,jdbcType=VARCHAR},
+            </if>
+            <if test="industryCategory != null">
+                #{industryCategory,jdbcType=VARCHAR},
+            </if>
+            <if test="loginFlag != null" >
+                #{loginFlag,jdbcType=VARCHAR},
+            </if>
+            <if test="loginIp != null" >
+                #{loginIp,jdbcType=VARCHAR},
+            </if>
+            <if test="loginDate != null" >
+                #{loginDate,jdbcType=TIMESTAMP},
+            </if>
+            <if test="createBy != null" >
+                #{createBy.id,jdbcType=VARCHAR},
+            </if>
+            <if test="createDate != null" >
+                #{createDate,jdbcType=TIMESTAMP},
+            </if>
+            <if test="updateBy != null" >
+                #{updateBy.id,jdbcType=VARCHAR},
+            </if>
+            <if test="updateDate != null" >
+                #{updateDate,jdbcType=TIMESTAMP},
+            </if>
+            <if test="remarks != null" >
+                #{remarks,jdbcType=VARCHAR},
+            </if>
+            <if test="delFlag != null" >
+                #{delFlag,jdbcType=CHAR},
+            </if>
+        </set>
+        where id = #{id,jdbcType=INTEGER}
+    </update>
+
+    <update id="updateUserBaseInfo" parameterType="User">
+        update admin_user
+        <set >
+            <if test="sex != null">
+                sex = #{sex,jdbcType=INTEGER},
+            </if>
+            <if test="secrecyFlag != null">
+                secrecy_flag = #{secrecyFlag,jdbcType=INTEGER},
+            </if>
+            <if test="mobile != null" >
+                mobile = #{mobile,jdbcType=VARCHAR},
+            </if>
+            <if test="email != null" >
+                email = #{email,jdbcType=VARCHAR},
+            </if>
+            <if test="wechat != null">
+                wechat = #{wechat,jdbcType=VARCHAR},
+            </if>
+        </set>
+        where id = #{id,jdbcType=INTEGER}
+    </update>
+
+    <update id="updateUserDetailInfo" parameterType="User">
+        update admin_user
+        <set >
+            <if test="nativePleace != null">
+                native_pleace = #{nativePleace,jdbcType=VARCHAR},
+            </if>
+            <if test="qq != null">
+                qq = #{qq,jdbcType=VARCHAR},
+            </if>
+            <if test="postcode != null">
+                postcode = #{postcode,jdbcType=VARCHAR},
+            </if>
+            <if test="address != null">
+                address = #{address,jdbcType=VARCHAR},
+            </if>
+            <if test="homephone != null" >
+                homephone = #{homephone,jdbcType=VARCHAR},
+            </if>
+            <if test="enterpriseAddress != null">
+                enterprise_address = #{enterpriseAddress,jdbcType=VARCHAR},
+            </if>
+            <if test="industryCategory != null">
+                industry_category = #{industryCategory,jdbcType=VARCHAR},
+            </if>
+            <if test="introduction != null">
+                introduction = #{introduction,jdbcType=VARCHAR},
+            </if>
+        </set>
+        where id = #{id,jdbcType=INTEGER}
+    </update>
+
+    <update id="updateUserPassword">
+        update admin_user set password = #{password,jdbcType=VARCHAR}
+        where id = #{id,jdbcType=INTEGER}
+    </update>
+    <update id="updateUserLonginInfo">
+        update pm_sys_user set login_ip = #{loginIp,jdbcType=VARCHAR},
+        login_date = #{loginDate,jdbcType=TIMESTAMP}
+        where id = #{id,jdbcType=INTEGER}
+    </update>
+    <delete id="delete" parameterType="User">
+        DELETE FROM admin_user WHERE id =  #{id,jdbcType=INTEGER}
+    </delete>
+</mapper>

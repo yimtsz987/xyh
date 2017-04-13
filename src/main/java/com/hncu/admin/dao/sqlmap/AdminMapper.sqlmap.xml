@@ -1,0 +1,269 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.hncu.admin.dao.mapper.AdminMapper">
+    <sql id="adminColumns">
+        a.id,
+        a.login_name as "loginName",
+        a.password,
+        u.name,
+        u.role_id as "role.id",
+        u.header_pic as "headerPic",
+        u.mobile,
+        u.email,
+        u.qq,
+        u.address,
+        u.login_ip as "loginIp",
+        u.login_date as "loginDate",
+        u.login_flag as "loginFlag",
+        u.create_by as "createBy.id",
+        u.create_date as "createDate",
+        u.update_by as "updateBy.id",
+        u.update_date as "updateDate",
+        u.remarks,
+        r.name as "role.name"
+    </sql>
+
+    <sql id="adminJoins">
+        JOIN admin_role r on r.id = u.role_id
+    </sql>
+
+    <select id="queryList" parameterType="Admin" resultType="Admin">
+        SELECT <include refid="adminColumns" />
+        FROM admin_admin a
+        <include refid="adminJoins" />
+        WHERE u.del_flag = #{DEL_FLAG_NORMAL}
+        <if test="id != null and id != ''">
+            and a.id = #{id,jdbcType=VARCHAR}
+        </if>
+        <if test="loginName != null and loginName != ''">
+            and a.login_name like concat ('%', #{loginName}, '%')
+        </if>
+        <if test="name != null and name != ''">
+            and a.name like concat ('%', #{name}, '%')
+        </if>
+        <if test="role != null and role.id != null and role.id != ''">
+            and a.role_id = #{role.id,jdbcType=INTEGER}
+        </if>
+    </select>
+
+    <select id="queryById" parameterType="string" resultType="Admin">
+        SELECT <include refid="adminColumns" />
+        FROM admin_admin a
+        <include refid="adminJoins" />
+        WHERE a.id = #{id, jdbcType=NUMERIC}
+        and a.del_flag = #{DEL_FLAG_NORMAL}
+    </select>
+    <select id="queryAdminByLoginName" resultType="Admin">
+        SELECT <include refid="adminColumns" />
+        FROM admin_admin a
+        <include refid="adminJoins" />
+        WHERE a.login_name = #{loginName}
+        and a.del_flag = #{DEL_FLAG_NORMAL}
+    </select>
+    <insert id="insert" parameterType="Admin" useGeneratedKeys="true"
+            keyProperty="id">
+        insert into admin_admin
+        <trim prefix="(" suffix=")" suffixOverrides="," >
+
+
+
+            <if test="loginName != null" >
+                login_name,
+            </if>
+            <if test="password != null" >
+                password,
+            </if>
+            <if test="name != null" >
+                name,
+            </if>
+            <if test="role != null and role.id != null and role.id != ''" >
+                role_id,
+            </if>
+            <if test="headerPic != null">
+                header_pic,
+            </if>
+            <if test="mobile != null" >
+                mobile,
+            </if>
+            <if test="email != null" >
+                email,
+            </if>
+            <if test="qq != null">
+                qq,
+            </if>
+            <if test="address != null">
+                address,
+            </if>
+            <if test="loginFlag != null" >
+                login_flag,
+            </if>
+            <if test="loginIp != null" >
+                login_ip,
+            </if>
+            <if test="loginDate != null" >
+                login_date,
+            </if>
+            <if test="createBy != null" >
+                create_by,
+            </if>
+            <if test="createDate != null" >
+                create_date,
+            </if>
+            <if test="updateBy != null" >
+                update_by,
+            </if>
+            <if test="updateDate != null" >
+                update_date,
+            </if>
+            <if test="remarks != null" >
+                remarks,
+            </if>
+            <if test="delFlag != null" >
+                del_flag,
+            </if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides="," >
+
+            <if test="loginName != null" >
+                #{loginName,jdbcType=VARCHAR},
+            </if>
+            <if test="password != null" >
+                #{password,jdbcType=VARCHAR},
+            </if>
+            <if test="name != null" >
+                #{name,jdbcType=VARCHAR},
+            </if>
+            <if test="role != null and role.id != null and role.id != ''" >
+                #{roleId,jdbcType=INTEGER},
+            </if>
+            <if test="headerPic != null">
+                #{headerPic,jdbcType=VARCHAR},
+            </if>
+            <if test="mobile != null" >
+                #{mobile,jdbcType=VARCHAR},
+            </if>
+            <if test="email != null" >
+                #{email,jdbcType=VARCHAR},
+            </if>
+            <if test="qq != null">
+                #{qq,jdbcType=VARCHAR},
+            </if>
+            <if test="address != null">
+                #{address,jdbcType=VARCHAR},
+            </if>
+            <if test="loginFlag != null" >
+                #{loginFlag,jdbcType=VARCHAR},
+            </if>
+            <if test="loginIp != null" >
+                #{loginIp,jdbcType=VARCHAR},
+            </if>
+            <if test="loginDate != null" >
+                #{loginDate,jdbcType=TIMESTAMP},
+            </if>
+            <if test="createBy != null" >
+                #{createBy.id,jdbcType=VARCHAR},
+            </if>
+            <if test="createDate != null" >
+                #{createDate,jdbcType=TIMESTAMP},
+            </if>
+            <if test="updateBy != null" >
+                #{updateBy.id,jdbcType=VARCHAR},
+            </if>
+            <if test="updateDate != null" >
+                #{updateDate,jdbcType=TIMESTAMP},
+            </if>
+            <if test="remarks != null" >
+                #{remarks,jdbcType=VARCHAR},
+            </if>
+            <if test="delFlag != null" >
+                #{delFlag,jdbcType=CHAR},
+            </if>
+        </trim>
+    </insert>
+    <insert id="insertUserRole">
+        INSERT INTO pm_sys_user_role (user_id, role_id)
+        <!--oracle 批量插入的写法
+        <foreach collection="roleList" item="role" separator=" union all">
+          SELECT #{id,jdbcType=INTEGER}, #{role.id,jdbcType=INTEGER} from dual
+        </foreach>
+        -->
+        VALUES
+        <foreach collection="roleList" item="role" separator=",">
+            (#{id,jdbcType=INTEGER}, #{role.id,jdbcType=INTEGER})
+        </foreach>
+    </insert>
+
+    <update id="update" parameterType="Admin">
+        update admin_admin
+        <set >
+            <if test="loginName != null" >
+                #{loginName,jdbcType=VARCHAR},
+            </if>
+            <if test="password != null" >
+                #{password,jdbcType=VARCHAR},
+            </if>
+            <if test="name != null" >
+                #{name,jdbcType=VARCHAR},
+            </if>
+            <if test="role != null and role.id != null and role.id != ''" >
+                #{roleId,jdbcType=INTEGER},
+            </if>
+            <if test="headerPic != null">
+                #{headerPic,jdbcType=VARCHAR},
+            </if>
+            <if test="mobile != null" >
+                #{mobile,jdbcType=VARCHAR},
+            </if>
+            <if test="email != null" >
+                #{email,jdbcType=VARCHAR},
+            </if>
+            <if test="qq != null">
+                #{qq,jdbcType=VARCHAR},
+            </if>
+            <if test="address != null">
+                #{address,jdbcType=VARCHAR},
+            </if>
+            <if test="loginFlag != null" >
+                #{loginFlag,jdbcType=VARCHAR},
+            </if>
+            <if test="loginIp != null" >
+                #{loginIp,jdbcType=VARCHAR},
+            </if>
+            <if test="loginDate != null" >
+                #{loginDate,jdbcType=TIMESTAMP},
+            </if>
+            <if test="createBy != null" >
+                #{createBy.id,jdbcType=VARCHAR},
+            </if>
+            <if test="createDate != null" >
+                #{createDate,jdbcType=TIMESTAMP},
+            </if>
+            <if test="updateBy != null" >
+                #{updateBy.id,jdbcType=VARCHAR},
+            </if>
+            <if test="updateDate != null" >
+                #{updateDate,jdbcType=TIMESTAMP},
+            </if>
+            <if test="remarks != null" >
+                #{remarks,jdbcType=VARCHAR},
+            </if>
+            <if test="delFlag != null" >
+                #{delFlag,jdbcType=CHAR},
+            </if>
+        </set>
+        where id = #{id,jdbcType=INTEGER}
+    </update>
+    <update id="updateUserPasword">
+        update admin_admin set password = #{password,jdbcType=VARCHAR}
+        where id = #{id,jdbcType=INTEGER}
+    </update>
+    <update id="updateUserLonginInfo">
+        update admin_admin set login_ip = #{loginIp,jdbcType=VARCHAR},
+        login_date = #{loginDate,jdbcType=TIMESTAMP}
+        where id = #{id,jdbcType=INTEGER}
+    </update>
+    <delete id="delete" parameterType="Admin">
+        update admin_admin set del_flag = #{DEL_FLAG_DELETE}
+        where id =  #{id,jdbcType=INTEGER}
+    </delete>
+</mapper>

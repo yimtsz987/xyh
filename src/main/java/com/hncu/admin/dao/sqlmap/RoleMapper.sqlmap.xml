@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.hncu.admin.dao.mapper.RoleMapper">
+    <cache type="org.mybatis.caches.ehcache.EhcacheCache" />
+    <sql id="roleColumns">
+        r.id,
+        r.name,
+        r.description,
+        r.count,
+        r.data_scope as "dataScope",
+        r.create_by as "createBy.id",
+        r.create_date as "createDate",
+        r.update_by as "updateBy.id",
+        r.update_date as "updateDate",
+        r.remarks
+    </sql>
+
+
+    <resultMap id="roleResultMap" type="Role">
+        <id column="id" property="id" jdbcType="INTEGER" />
+        <result column="name" property="name" jdbcType="VARCHAR" />
+        <result column="count" property="count" jdbcType="INTEGER" />
+        <result column="scopeOfData" property="scopeOfData" jdbcType="VARCHAR" />
+        <result column="remarks" property="remarks" jdbcType="VARCHAR" />
+        <collection property="menuList" ofType="Menu">
+            <id property="id" column="menuList.id" />
+        </collection>
+
+     </resultMap>
+
+    <select id="queryList" parameterType="Role" resultType="Role">
+
+    </select>
+
+    <select id="queryById" parameterType="string" resultMap="roleResultMap">
+
+    </select>
+
+    <select id="queryByUserId" resultMap="roleResultMap" parameterType="Role">
+      SELECT <include refid="roleColumns" />,
+        rm.menu_id as "menuList.id"
+        FROM admin_role r
+        LEFT JOIN admin_role_menu rm on rm.role_id = r.id
+        left join admin_user u on u.role_id = r.id
+        where r.del_flag = #{DEL_FLAG_NORMAL}
+          <if test="user != null and user.id != null and user.id != ''">
+             and u.id = #{user.id}
+          </if>
+          <if test="user != null and user.loginName != null and user.loginName != ''">
+             and u.login_name = #{user.loginName}
+          </if>
+        order by r.name
+    </select>
+    <select id="queryByName" resultType="Role">
+
+    </select>
+
+    <insert id="insert" parameterType="Role" useGeneratedKeys="true"
+            keyProperty="id">
+
+    </insert>
+    <insert id="insertRoleMenu">
+
+    </insert>
+    <insert id="insertRoleOffice">
+
+    </insert>
+    <update id="update" parameterType="Role">
+
+    </update>
+    <delete id="delete" parameterType="Role">
+
+    </delete>
+    <delete id="deleteRoleMenu">
+
+    </delete>
+    <delete id="deleteRoleOffice">
+
+    </delete>
+</mapper>

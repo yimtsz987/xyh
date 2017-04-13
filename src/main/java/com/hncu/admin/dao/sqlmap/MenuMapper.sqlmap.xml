@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.hncu.admin.dao.mapper.MenuMapper">
+    <cache type="org.mybatis.caches.ehcache.EhcacheCache" />
+    <sql id="menuColumns">
+        m.id,
+        m.parent_id as "parent.id",
+        m.parent_ids as parentIds,
+        m.name,
+        m.sort,
+        m.href,
+        m.icon,
+        m.is_show as "isShow",
+        m.permission,
+        m.create_by as "createBy.id",
+        m.create_date as "createDate",
+        m.update_by as "updateBy.id",
+        m.update_date as "updateDate",
+        m.remarks,
+        psm.name as "parent.name"
+    </sql>
+
+    <sql id="menuJoin">
+        LEFT JOIN admin_menu psm on psm.id = m.parent_id
+    </sql>
+
+
+
+    <select id="queryList" parameterType="Menu" resultType="Menu">
+      SELECT <include refid="menuColumns" />
+        FROM admin_menu m
+        <include refid="menuJoin" />
+        WHERE m.del_flag = #{DEL_FLAG_NORMAL}
+        order by sort
+    </select>
+
+    <select id="queryById" parameterType="string" resultType="Menu">
+      SELECT <include refid="menuColumns" />
+        from admin_menu m
+        <include refid="menuJoin" />
+        WHERE m.id = #{id,jdbcType=INTEGER}
+    </select>
+
+    <select id="queryByUserId" resultType="Menu">
+        SELECT DISTINCT <include refid="menuColumns"/>
+            from admin_menu m
+            <include refid="menuJoin" />
+            join admin_role_menu rm on rm.menu_id = m.id
+            join admin_role r on r.id = rm.role_id
+            join admin_user ur on ur.role_id = r.id and ur.id = #{userId}
+            where m.del_flag = #{DEL_FLAG_NORMAL} and r.del_flag = #{DEL_FLAG_NORMAL}
+            and ur.del_flag = #{DEL_FLAG_NORMAL}
+          order by sort
+    </select>
+    <insert id="insert" parameterType="Menu" useGeneratedKeys="true"
+            keyProperty="id">
+        insert into pm_sys_menu (parent_id, parent_ids,
+          name, sort, href, target,
+          icon, is_show, permission,
+          create_by, create_date, update_by,
+          update_date, remarks, del_flag
+          )
+        values (#{parent.id,jdbcType=INTEGER}, #{parentIds,jdbcType=VARCHAR},
+          #{name,jdbcType=VARCHAR}, #{sort,jdbcType=DECIMAL}, #{href,jdbcType=VARCHAR}, #{target,jdbcType=VARCHAR},
+          #{icon,jdbcType=VARCHAR}, #{isShow,jdbcType=CHAR}, #{permission,jdbcType=VARCHAR},
+          #{createBy.id,jdbcType=VARCHAR}, #{createDate,jdbcType=TIMESTAMP}, #{updateBy.id,jdbcType=VARCHAR},
+          #{updateDate,jdbcType=TIMESTAMP}, #{remarks,jdbcType=VARCHAR}, #{delFlag,jdbcType=CHAR}
+          )
+    </insert>
+    <update id="update" parameterType="Menu">
+      update pm_sys_menu
+        set parent_id = #{parent.id,jdbcType=INTEGER},
+          parent_ids = #{parentIds,jdbcType=VARCHAR},
+          name = #{name,jdbcType=VARCHAR},
+          sort = #{sort,jdbcType=INTEGER},
+          href = #{href,jdbcType=VARCHAR},
+          target = #{target,jdbcType=VARCHAR},
+          icon = #{icon,jdbcType=VARCHAR},
+          is_show = #{isShow,jdbcType=CHAR},
+          permission = #{permission,jdbcType=VARCHAR},
+          update_by = #{updateBy.id,jdbcType=VARCHAR},
+          update_date = #{updateDate,jdbcType=TIMESTAMP},
+          remarks = #{remarks,jdbcType=VARCHAR}
+        where id = #{id,jdbcType=INTEGER}
+    </update>
+    <delete id="delete" parameterType="Menu">
+      UPDATE pm_sys_menu set del_flag = #{DEL_FLAG_DELETE}
+      where id = #{id,jdbcType=INTEGER}
+        or parent_ids like concat('%',  #{id,jdbcType=INTEGER}, '%')
+    </delete>
+
+    <select id="queryByParentIdsLike" parameterType="Menu" resultType="Menu">
+        select <include refid="menuColumns" />
+        from pm_sys_menu m
+        <include refid="menuJoin" />
+        WHERE m.del_flag = #{DEL_FLAG_NORMAL} and m.parent_ids like concat('%', #{parentIds}, '%')
+        order by sort
+    </select>
+
+    <update id="updateParentIds" parameterType="Menu">
+        UPDATE pm_sys_menu set
+          parent_id = #{parent.id},
+          parent_ids = #{parentIds}
+        where id = #{id}
+    </update>
+    <update id="updateSort">
+         UPDATE pm_sys_menu set
+          sort = #{sort,jdbcType=INTEGER}
+         where id = #{id,jdbcType=INTEGER}
+    </update>
+</mapper>

@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<title>湖南城市学院校友会信息管理系统</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta name="renderer" content="webkit|ie-comp|ie-stand">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+		<meta http-equiv="Cache-Control" content="no-siteapp" />
+		<link rel="stylesheet" href="assets/css/bootstrap.min.css"  />
+		<link rel="stylesheet" href="css/style.css" />
+		<link rel="stylesheet" href="css/public.css">
+		<link rel="stylesheet" href="assets/css/codemirror.css" >
+		<link rel="stylesheet" href="assets/css/ace.min.css" />
+		<link rel="stylesheet" href="assets/css/font-awesome.min.css" />
+		<link rel="stylesheet" href="font/css/font-awesome.min.css" />
+		<link rel="stylesheet" href="Widget/zTree/css/zTreeStyle/zTreeStyle.css" >
+		<!--[if IE 7]>
+		  <link rel="stylesheet" href="assets/css/font-awesome-ie7.min.css" />
+		<![endif]-->
+		<!--[if lte IE 8]>
+		  <link rel="stylesheet" href="assets/css/ace-ie.min.css" />
+		<![endif]-->
+		<script type="text/javascript" src="js/jquery-1.9.1.min.js"></script>
+		<script type="text/javascript" src="js/close_alert.js"></script>
+		<script type="text/javascript" src="js/lrtk.js" ></script>
+		<script type="text/javascript" src="js/custom.js" ></script>
+		<script type="text/javascript" src="assets/js/bootstrap.min.js"></script>
+		<script type="text/javascript" src="assets/js/typeahead-bs2.min.js"></script>
+		<script type="text/javascript" src="assets/js/jquery.dataTables.min.js"></script>
+		<script type="text/javascript" src="assets/js/jquery.dataTables.bootstrap.js"></script>
+		<script type="text/javascript" src="assets/layer/layer.js"></script>
+		<script type="text/javascript" src="assets/laydate/laydate.js"></script>
+		<script type="text/javascript" src="assets/js/jquery.easy-pie-chart.min.js"></script>
+		<!--表单验证 -->
+		<script type="text/javascript" src="Widget/Validform/5.3.2/Validform.min.js"></script>
+		<!--动态传值 -->
+		<script type="text/javascript" src="js/vue.js"></script>
+		<!--图片上传 -->
+		<script type="text/javascript" src="scripts/swfobject.js"></script>
+		<script type="text/javascript" src="scripts/fullAvatarEditor.js"></script>
+		<!--文件树 -->
+		<script type="text/javascript" src="Widget/zTree/js/jquery.ztree.all-3.5.min.js"></script>
+		<!--富文本 -->
+		<script type="text/javascript" charset="utf-8" src="js/ueditor.config.js"></script>
+		<script type="text/javascript" charset="utf-8" src="js/editor_api.js">
+		</script>
+		<!--建议手动加在语言，避免在ie下有时因为加载语言失败导致编辑器加载失败-->
+		<!--这里加载的语言文件会覆盖你在配置项目里添加的语言类型，比如你在配置项目里配置的是英文，这里加载的中文，那最后就是中文-->
+		<script type="text/javascript" charset="utf-8" src="js/zh-cn.js"></script>
+	</head>
+	<style>
+		.con_jjhjj {
+			width: 96%;
+			margin: 10px auto;
+			min-width: 850px;
+			min-height: 800px;
+			border: 1px solid #ccc;
+			background: #fff;
+			box-shadow: 0px 5px 10px #AFAEAE;
+		}
+		
+		.con_jjhjj .jjhjj_con {
+			width: 98%;
+			min-height: 770px;
+			margin: 1% 1% 1% 1%;
+			border: 1px solid #E3E3E3;
+			background: #fff;
+			padding: 10px 20px;
+		}
+	</style>
+
+	<body>
+		<div class="con_jjhjj">
+			<div class="clearfix" style="margin: 1% 1%;">
+				<span class="l_f">
+        <a href="javascript:void(0);" id="ads_add" class="btn btn-warning"><i class="fa fa-plus"></i> 修改文章</a>
+            </span>
+			</div>
+			<div class="alert alert-block alert-success">
+				<button type="button" class="close" data-dismiss="alert"><i class="icon-remove"></i></button>
+				<i class="icon-ok green"></i><strong>【系统管理员】</strong>保存成功
+			</div>
+			<div class="jjhjj_con">
+				<table class="wb_window" width="100%">
+					<tbody>
+						<tr>
+							<td align="center">
+								<h1>捐赠方式</h1></td>
+						</tr>
+						<tr>
+							<td class="contentstyle128747">
+								<div>
+									<font style="font-size: 12pt">（一）银行转账 <br><br>湖南城市学院教育发展基金会账号资料： <br><br>开户单位：湖南城市学院教育发展基金会 <br><br>开户行：益阳市建设银行赫山庙支行 <br><br>账号：43001520267059111668 <br><br>款项名称：教育发展基金捐赠 <br><br>校友办根据转账信息办理相关事宜 <br><br>（二）现金交付及邮局汇款 <br><br>现金交付方式： <br><br>现金交付地址：湖南省益阳市银城南路（新校区）湖南城市学院教育发展基金会 <br><br>凭现金交付凭证到校友办作信息登记并办理相关手续 <br><br>邮局汇款方式： <br><br>汇款地址：湖南省益阳市银城南路（新校区）湖南城市学院教育发展基金会 <br><br>汇款内容：湖南城市学院教育发展基金捐赠 <br><br>邮政编码：413000 <br><br>联系电话：0737-6111036 </font>
+								</div>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+		<div class="clear"></div>
+	</body>
+
+</html>
